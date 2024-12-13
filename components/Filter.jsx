@@ -224,6 +224,31 @@ export default function Filter({ filterdata, setfilterdata }) {
             return item;
           }
         }
+        if (filterdata?.type.includes("girls_schools")) {
+          if (item?.fields?.girls_schools) {
+            return item;
+          }
+        }
+        if (filterdata?.type.includes("boys_schools")) {
+          if (item?.fields?.boys_schools) {
+            return item;
+          }
+        }
+        if (filterdata?.type.includes("coed_schools")) {
+          if (item?.fields?.coed_schools) {
+            return item;
+          }
+        }
+        if (filterdata?.type.includes("icse_isc_schools")) {
+          if (item?.fields?.icse_isc_schools) {
+            return item;
+          }
+        }
+        if (filterdata?.type.includes("cbse_schools")) {
+          if (item?.fields?.cbse_schools) {
+            return item;
+          }
+        }
       });
     } else {
       var filter4 = filter3;
@@ -236,22 +261,22 @@ export default function Filter({ filterdata, setfilterdata }) {
     });
   }
 
-  const handleClearFilter = ()=>{
+  const handleClearFilter = () => {
     setfilterdata({
       ...filterdata,
       classification: [],
       boards: [],
       type: [],
       employees: filterdata?.globaldata,
-    })
-  }
+    });
+  };
 
   return (
     <>
-      <div className="px-5 pt-3 text-[#000000]">
+      <div className="px-5 pt-3 md:pt-1 text-[#000000]">
         <div className=" space-y-3 sm:space-y-2 ">
           <p className="text-[22px] ">Filter</p>
-          <div className=" space-y-2">
+          <div className=" space-y-2 md:space-y-1">
             <p className="text-[14px] mt-5 font-semibold">Sort</p>
 
             <div className="flex justify-between">
@@ -284,7 +309,7 @@ export default function Filter({ filterdata, setfilterdata }) {
           </div>
           <hr />
 
-           <div className="space-y-3">
+          <div className="space-y-3">
             <p className="text-[14px] font-semibold text-[#000000]">Boards</p>
             <div className="flex flex-wrap gap-x-5 gap-y-3 text-[12px]">
               <div className="flex  justify-between pr-3 min-w-[140px]">
@@ -433,7 +458,7 @@ export default function Filter({ filterdata, setfilterdata }) {
                 </button>
               </div>
             </div>
-          </div>  
+          </div>
           {/* <div className="space-y-3">
             <p className="text-[14px] font-semibold">Boards</p>
             <div className="flex flex-wrap gap-x-5 gap-y-3 text-[12px]">
@@ -566,8 +591,8 @@ export default function Filter({ filterdata, setfilterdata }) {
 
           <div className="space-y-3">
             <p className="text-[14px] font-semibold">Type</p>
-            <div className="flex flex-wrap gap-x-3 gap-y-5 text-[12px]">
-              <div className="flex justify-between min-w-[140px] pr-3">
+            <div className="flex flex-wrap gap-x-3 gap-y-5 md:gap-y-3 text-[12px]">
+              <div className="flex justify-between min-w-[140px] ">
                 <p>Boarding</p>
                 <button
                   className="bg-[#D9D9D9] w-[20px] h-[20px] grid place-content-center rounded-sm"
@@ -595,7 +620,7 @@ export default function Filter({ filterdata, setfilterdata }) {
                 </button>
               </div>
 
-              <div className="flex justify-between pl-1 min-w-[140px] pr-2">
+              <div className="flex justify-between pl-1 min-w-[140px] ">
                 <p>Day Boarding</p>
                 <button
                   className="bg-[#D9D9D9] w-[20px] h-[20px] grid place-content-center rounded-sm"
@@ -622,7 +647,7 @@ export default function Filter({ filterdata, setfilterdata }) {
                   )}
                 </button>
               </div>
-              <div className="flex justify-between  min-w-[140px] pr-3">
+              <div className="flex justify-between  min-w-[140px] ">
                 <p>Day School</p>
                 <button
                   className="bg-[#D9D9D9] w-[20px] h-[20px] grid place-content-center rounded-sm"
@@ -649,11 +674,146 @@ export default function Filter({ filterdata, setfilterdata }) {
                   )}
                 </button>
               </div>
+              <div className="flex justify-between min-w-[140px]  ">
+                <p>Boys Boarding</p>
+                <button
+                  className="bg-[#D9D9D9] w-[20px] h-[20px] grid place-content-center rounded-sm"
+                  onClick={() => handleType("boys_schools")}
+                >
+                  {filterdata.type.includes("boys_schools") ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#02618f"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="m2.75 8.75l3.5 3.5l7-7.5"
+                      />
+                    </svg>
+                  ) : (
+                    ""
+                  )}
+                </button>
+              </div>
+              <div className="flex justify-between min-w-[140px] ">
+                <p>Girls Boarding</p>
+                <button
+                  className="bg-[#D9D9D9] w-[20px] h-[20px] grid place-content-center rounded-sm"
+                  onClick={() => handleType("girls_schools")}
+                >
+                  {filterdata.type.includes("girls_schools") ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#02618f"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="m2.75 8.75l3.5 3.5l7-7.5"
+                      />
+                    </svg>
+                  ) : (
+                    ""
+                  )}
+                </button>
+              </div>
+              <div className="flex justify-between  min-w-[140px] ">
+                <p>Coed Boarding</p>
+                <button
+                  className="bg-[#D9D9D9] w-[20px] h-[20px] grid place-content-center rounded-sm"
+                  onClick={() => handleType("coed_schools")}
+                >
+                  {filterdata.type.includes("coed_schools") ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#02618f"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="m2.75 8.75l3.5 3.5l7-7.5"
+                      />
+                    </svg>
+                  ) : (
+                    ""
+                  )}
+                </button>
+              </div>
+              <div className="flex justify-between  min-w-[140px] ">
+                <p>ICSE Boarding</p>
+                <button
+                  className="bg-[#D9D9D9] w-[20px] h-[20px] grid place-content-center rounded-sm"
+                  onClick={() => handleType("icse_isc_schools")}
+                >
+                  {filterdata.type.includes("icse_isc_schools") ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#02618f"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="m2.75 8.75l3.5 3.5l7-7.5"
+                      />
+                    </svg>
+                  ) : (
+                    ""
+                  )}
+                </button>
+              </div>
+              <div className="flex justify-between  min-w-[140px] ">
+                <p>CBSE Boarding</p>
+                <button
+                  className="bg-[#D9D9D9] w-[20px] h-[20px] grid place-content-center rounded-sm"
+                  onClick={() => handleType("cbse_schools")}
+                >
+                  {filterdata.type.includes("cbse_schools") ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#02618f"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="m2.75 8.75l3.5 3.5l7-7.5"
+                      />
+                    </svg>
+                  ) : (
+                    ""
+                  )}
+                </button>
+              </div>
             </div>
           </div>
 
           <div className="pt-3">
-            <div className="flex justify-center items-center border rounded-3xl h-[30px] w-[259px] border-background-dark mx-auto cursor-pointer">
+            <div className="flex justify-center items-center border rounded-3xl h-[30px] w-[259px] border-[#898989] mx-auto cursor-pointer">
               <button
                 onClick={() => handleClearFilter()}
                 className="text-background-dark text-[12px]"
