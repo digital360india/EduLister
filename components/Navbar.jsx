@@ -368,7 +368,7 @@ const Navbar = () => {
   return (
     <div>
       <nav
-        className="hidden md:block w-full absolute top-0 z-40 bg-white"
+        className="hidden md:block w-full absolute top-0 z-40 bg-white border border-[#9B1750]"
         
       >
         <div className="justify-between  items-center h-[80px] flex px-6">

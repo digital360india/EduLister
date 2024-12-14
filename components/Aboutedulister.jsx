@@ -22,7 +22,7 @@ const Aboutedulister = () => {
                   src="/cap.svg"
                   width={1000}
                   height={1000}
-                  className="w-[47px] h-[39px]"
+                  className="w-[47px] h-[39px] "
                   alt="img"
                 />
                 <p className="text-[20px] md:text-[29px] font-semibold">500+</p>
@@ -86,25 +86,21 @@ const Aboutedulister = () => {
           }`}
         >
           <button
-            className="absolute w-[30px] h-[30px] rounded-full text-white text-[1.3rem] bg-[#1B6EA1] top-48 left-3"
+            className="absolute w-[30px] h-[30px] rounded-full text-white text-[1.3rem] bg-[#9B1750] top-48 left-3"
             onClick={() => setShowContent(false)}
           >
             &lt;
           </button>
 
           <div className="p-[46px] text-justify overflow-y-auto h-full text-[13px]">
-            Go Edu is India&apos;s trusted platform for discovering the best boarding
-            schools, dedicated to offering unbiased, detailed information to
-            help families make well-informed choices. We simplify school
-            selection, bringing clarity and confidence to parents and students
-            alike.
-            <br />
-            <br />
-            Driven by a commitment to educational transparency, Go Edu combines
-            insightful listings, genuine reviews, and comprehensive school
-            profiles. Our mission is to empower families with accurate,
-            accessible resources and guide them toward the ideal academic
-            environment tailored to their needs.
+            Edu Lister is your trusted resource for finding premier boarding
+            schools throughout India. Our user-friendly platform streamlines the
+            school search journey, offering in-depth profiles and clear
+            insights. Whether you prioritize exceptional academics, cutting-edge
+            facilities, or a supportive atmosphere, Edu Lister empowers you to
+            make the best decisions for your child&apos;s education. Rely on us to
+            help you explore and choose from a wide array of boarding schools
+            across the country with confidence.
           </div>
         </div>
       </div>
@@ -205,15 +201,15 @@ const Aboutedulister = () => {
                   className="absolute w-[500px] h-[330px]  right-80 bottom-5 z-10"
                   alt="Line"
                 />
-                {/* <Image
-                  src="/Frame.png"
+                <Image
+                  src="/GoEdu (4) 3.svg"
                   width={1000}
                   height={1000}
-                  className={`absolute w-[450px] h-[485px] -bottom-[70px]  right-0 transition-transform duration-700 ease-in-out transform ${
+                  className={`absolute w-[450px] h-[485px] -bottom-[70px]  right-0 transition-transform duration-700 ease-in-out transform bg-white ${
                     isHovered ? "translate-x-0" : "translate-x-full"
                   }`}
                   alt="Frame"
-                /> */}
+                />
               </div>
             </div>
           </div>
@@ -228,7 +224,7 @@ const Aboutedulister = () => {
               onMouseLeave={() => setShowContent(false)}
             >
               <button
-                className="absolute w-[40px] h-[40px] rounded-full text-white text-[1.5rem] bg-[#1B6EA1] top-36 left-10  hover:text-gray-800"
+                className="absolute w-[40px] h-[40px] rounded-full text-white text-[1.5rem] bg-[#9B1750] top-36 left-10  hover:text-gray-800"
                 onClick={() => setShowContent(false)}
               >
                 &lt;
@@ -236,17 +232,14 @@ const Aboutedulister = () => {
               <div
                 className={`h-full px-[100px] overflow-y-auto  text-[1rem]  `}
               >
-                Go Edu is India&apos;s trusted platform for discovering the best
-                boarding schools, dedicated to offering unbiased, detailed
-                information to help families make well-informed choices. We
-                simplify school selection, bringing clarity and confidence to
-                parents and students alike. <br />
-                <br />
-                Driven by a commitment to educational transparency, Go Edu
-                combines insightful listings, genuine reviews, and comprehensive
-                school profiles. Our mission is to empower families with
-                accurate, accessible resources and guide them toward the ideal
-                academic environment tailored to their needs.
+                Edu Lister is your trusted resource for finding premier boarding
+                schools throughout India. Our user-friendly platform streamlines
+                the school search journey, offering in-depth profiles and clear
+                insights. Whether you prioritize exceptional academics,
+                cutting-edge facilities, or a supportive atmosphere, Edu Lister
+                empowers you to make the best decisions for your child&apos;s
+                education. Rely on us to help you explore and choose from a wide
+                array of boarding schools across the country with confidence.
                 <div className="flex justify-center items-center text-[#323232] space-x-60 pt-10">
                   <div className="space-y-1">
                     <Image

@@ -53,7 +53,7 @@ const WhyChooseUsedulister = () => {
 
           <div className="">
             <Image
-              src="/whychooseus.svg"
+              src="/Frame 178.svg"
               width={1000}
               height={1000}
               alt="img"
