@@ -66,6 +66,7 @@ const Mapedulister = () => {
             {cities.map((city, index) => (
               <div key={index} className=" text-center">
                 <div className={`bounce-slow ${index} custom-shadow`}>
+                <Link href={`/category/boarding-schools-in-${city.name}`}>
                   <Image
                     src={city.bannerSrc}
                     alt="location banner"
@@ -73,6 +74,7 @@ const Mapedulister = () => {
                     height={1000}
                     className="w-[250px] h-[240px] mx-4"
                   />
+                   </Link>
                 </div>
                 <div className={`resize-bottom ${index} custom-shadow-bottom`}>
                   <Image
