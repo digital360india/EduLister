@@ -24,7 +24,7 @@ const CategoryGalleryGoEdu = ({ data, index, citySlug }) => {
               width={1000}
               height={1000}
               className="object-cover w-full h-full"
-              src={`https://res.cloudinary.com/eduminatti-com/image/upload/v1729853967/Go%20Edu/${citySlug}/${
+              src={`https://res.cloudinary.com/eduminatti-com/image/upload/v1733386822/EduLister/${citySlug}/${
                 ['G', 'I', 'H', 'G'][idx]
               }-${data?.fields?.Image_Code}.png`}
               alt={`Category ${cardId}`}

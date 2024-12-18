@@ -238,7 +238,7 @@ const SchoolCardMini = ({ data, index, citySlug }) => {
         <div className="w-[85vw] md:w-[80vw]  md:h-[90vh] shadow-counsel px-[25px] py-[43px] space-y-2">
           <img
             className="w-full h-[167px] md:h-[300px] object-cover"
-            src={`https://res.cloudinary.com/eduminatti-com/image/upload/v1729853967/Go%20Edu/${citySlug}/G-${data?.fields?.Image_Code}.png`}
+            src={`https://res.cloudinary.com/eduminatti-com/image/upload/v1733386822/EduLister/${citySlug}/G-${data?.fields?.Image_Code}.png`}
             alt="img"
           />
 

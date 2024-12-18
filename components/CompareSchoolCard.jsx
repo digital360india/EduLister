@@ -163,7 +163,7 @@ const CompareSchoolCard = ({ onSchoolDataFetched }) => {
           <div className="flex justify-center">
             <div className="relative mt-4 w-full h-[170px] flex items-center justify-center">
               <img
-                src={`https://res.cloudinary.com/eduminatti-com/image/upload/v1722065379/Edu123/${location}/H-${schooldetail.Image_Code}.png`}
+                src={`https://res.cloudinary.com/eduminatti-com/image/upload/v1733386822/EduLister/${location}/H-${schooldetail.Image_Code}.png`}
                 className="w-full h-[160px] rounded-md border p-2"
               />
               <button
