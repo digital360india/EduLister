@@ -26,6 +26,15 @@ export default function page() {
                 alt="AirMax Pro"
                 className="z-0 h-full w-full rounded-lg object-cover"
               />
+
+              <div className=" text-[16px] mt-6">
+                <p className=" text-[20px] font-bold">Know More</p>
+
+                <a target="_blank" href="https://www.negivaibhav.com/">
+                  <p className="text-blue-500 underline">negivaibhav.com</p>
+                </a>
+              </div>
+
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-left">
                 <h1 className="text-lg font-semibold  text-white">
@@ -34,14 +43,14 @@ export default function page() {
                 <p className="text-sm text-gray-300 pb-2">Author</p>
               </div>
             </div>
-            <div className="flex flex-col gap-5 w-[300px] md:w-[600px] lg:w-[900px]  leading-[1.4rem]">
+            <div className="flex flex-col gap-5 w-[300px] md:w-[600px] lg:w-[900px]  leading-[1.4rem] mt-14 md:mt-0 lg:mt-0">
               <div className="lg:text-start text-center">
                 <h2 className="font-bold text-2xl text-black">Vaibhav Negi</h2>
                 <p className="text-black">Educational Content Specialist</p>
               </div>
               <p>
-                Hi, I&apos;m Vaibhav Negi! With a deep passion for education and a
-                knack for crafting meaningful content, I have spent over three
+                Hi, I&apos;m Vaibhav Negi! With a deep passion for education and
+                a knack for crafting meaningful content, I have spent over three
                 years in digital marketing, focusing primarily on the
                 educational sector. Writing has always been my way of connecting
                 with people, and throughout my career, I've been fortunate to
@@ -62,18 +71,19 @@ export default function page() {
                 contextually relevant content for the Indian education
                 landscape. My writing is tailored to empower parents and
                 students in selecting the best boarding schools by providing
-                in-depth details on each institution&apos;s culture, curriculum, and
-                offerings. I&apos;m committed to ensuring each article, guide, and
-                review is as enlightening as it is engaging, capturing the
-                unique aspects of India&apos;s diverse educational framework.
+                in-depth details on each institution&apos;s culture, curriculum,
+                and offerings. I&apos;m committed to ensuring each article,
+                guide, and review is as enlightening as it is engaging,
+                capturing the unique aspects of India&apos;s diverse educational
+                framework.
               </p>
               <p>
-                Beyond education, I&apos;ve expanded my experience as a freelance
-                writer with Sportskeeda, diving into the sports domain and
-                refining my versatility in adapting to different audiences. This
-                diversity in experience has sharpened my ability to resonate
-                with readers, no matter the topic while maintaining quality and
-                authenticity in each piece.
+                Beyond education, I&apos;ve expanded my experience as a
+                freelance writer with Sportskeeda, diving into the sports domain
+                and refining my versatility in adapting to different audiences.
+                This diversity in experience has sharpened my ability to
+                resonate with readers, no matter the topic while maintaining
+                quality and authenticity in each piece.
               </p>
               <p>
                 At Go Edu, my mission is to simplify and enrich the school
