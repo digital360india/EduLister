@@ -53,7 +53,7 @@ export default function page() {
                 a knack for crafting meaningful content, I have spent over three
                 years in digital marketing, focusing primarily on the
                 educational sector. Writing has always been my way of connecting
-                with people, and throughout my career, I've been fortunate to
+                with people, and throughout my career, I&apos;ve been fortunate to
                 create impactful content that helps students, parents, and
                 educators alike.
               </p>

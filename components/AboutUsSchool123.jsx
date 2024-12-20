@@ -62,13 +62,14 @@ const AboutUsSchool123 = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-10">
             <div className="flex-1 order-2 md:order-none text-center md:text-left">
               <p className="text-[16px] sm:text-[40px] font-semibold text-center md:text-left hidden md:block">
-              
-              WHO WE ARE
-
+                WHO WE ARE
               </p>
               <p className="text-[12px] sm:text-[20px] text-justify mt-4 ">
-              Edu Lister is a trailblazing online platform that connects families and students with the best boarding schools across India. We provide a one-stop resource featuring detailed school profiles, helping parents and students make well-informed decisions quickly and confidently.
-
+                Edu Lister is a trailblazing online platform that connects
+                families and students with the best boarding schools across
+                India. We provide a one-stop resource featuring detailed school
+                profiles, helping parents and students make well-informed
+                decisions quickly and confidently.
               </p>
             </div>
             <div className="w-[2px] h-52 bg-[#323232] hidden md:block"></div>
@@ -92,7 +93,7 @@ const AboutUsSchool123 = () => {
                 alt="Passion logo"
               />
               <p className="text-[16px] sm:text-[40px] font-semibold md:hidden">
-              OUR PASSION FOR EDUCATION
+                OUR PASSION FOR EDUCATION
               </p>
             </div>
             <div className="w-[2px] h-52 bg-[#323232] hidden md:block"></div>
@@ -101,8 +102,12 @@ const AboutUsSchool123 = () => {
                 Guided by Educational Excellence
               </p>
               <p className="text-[12px] sm:text-[20px] text-justify">
-              At Edu Lister, we are driven by a deep passion for quality education and the belief in the transformative potential of boarding schools. Our dedicated team works tirelessly to ensure our platform highlights the diversity and excellence of boarding education in India, catering to a wide range of needs and preferences.
-
+                At Edu Lister, we are driven by a deep passion for quality
+                education and the belief in the transformative potential of
+                boarding schools. Our dedicated team works tirelessly to ensure
+                our platform highlights the diversity and excellence of boarding
+                education in India, catering to a wide range of needs and
+                preferences.
               </p>
             </div>
           </div>
@@ -110,12 +115,14 @@ const AboutUsSchool123 = () => {
           <div className="flex flex-col md:flex-row md:justify-between items-center  md:space-x-10">
             <div className="flex-1 order-2 md:order-none text-center md:text-left">
               <p className="text-[16px] sm:text-[40px] font-semibold text-center pb-4 md:text-left hidden md:block">
-              HONEST AND RELIABLE INFORMATION
-
+                HONEST AND RELIABLE INFORMATION
               </p>
               <p className="text-[12px] sm:text-[20px] text-justify">
-              We are committed to providing accurate and transparent information. Edu Lister ensures parents and students receive up-to-date, reliable details about each boarding school. Our platform is designed to present an unbiased view, helping families find the best fit for their educational goals.
-
+                We are committed to providing accurate and transparent
+                information. Edu Lister ensures parents and students receive
+                up-to-date, reliable details about each boarding school. Our
+                platform is designed to present an unbiased view, helping
+                families find the best fit for their educational goals.
               </p>
             </div>
             <div className="w-[2px] h-52 bg-[#323232] hidden md:block"></div>
@@ -139,8 +146,7 @@ const AboutUsSchool123 = () => {
                 alt="Consultation logo"
               />
               <p className="text-[16px] sm:text-[40px] font-semibold  md:hidden">
-              OUR GOAL
-
+                OUR GOAL
               </p>
             </div>
             <div className="w-[2px] h-52 bg-[#323232] hidden md:block"></div>
@@ -149,8 +155,11 @@ const AboutUsSchool123 = () => {
                 Our Goal
               </p>
               <p className="text-[12px] sm:text-[20px] text-justify">
-              Our goal at Edu Lister is to simplify the search for the perfect boarding school. We strive to be India’s leading resource for boarding education, offering families an easy-to-navigate platform that saves both time and effort. We also give schools a space to showcase their unique features to a national audience.
-
+                Our goal at Edu Lister is to simplify the search for the perfect
+                boarding school. We strive to be India&apos;s leading resource for
+                boarding education, offering families an easy-to-navigate
+                platform that saves both time and effort. We also give schools a
+                space to showcase their unique features to a national audience.
               </p>
             </div>
           </div>
@@ -158,11 +167,14 @@ const AboutUsSchool123 = () => {
           <div className="flex flex-col md:flex-row justify-between items-center md:space-x-10">
             <div className="flex-1 order-2 md:order-none text-center md:text-left">
               <p className="text-[16px] sm:text-[40px] font-semibold text-center md:text-left pb-4 hidden md:block">
-              BRINGING FAMILIES AND SCHOOLS TOGETHER
+                BRINGING FAMILIES AND SCHOOLS TOGETHER
               </p>
               <p className="text-[12px] sm:text-[20px] text-justify">
-              Edu Lister connects India’s top boarding schools with families seeking the best educational opportunities for their children. Schools can reach a wider audience, while parents and students can access a curated selection of schools that meet our rigorous standards.
-
+                Edu Lister connects India&apos;s top boarding schools with families
+                seeking the best educational opportunities for their children.
+                Schools can reach a wider audience, while parents and students
+                can access a curated selection of schools that meet our rigorous
+                standards.
               </p>
             </div>
             <div className="w-[2px] h-52 bg-[#323232] hidden md:block"></div>
@@ -176,8 +188,8 @@ const AboutUsSchool123 = () => {
                 alt="Join us logo"
               />
             </div>
-            </div>
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-10">
+          </div>
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-10">
             <div className="flex items-center justify-center order-1 md:order-none gap-8 md:gap-0">
               <img
                 src="/consult.svg"
@@ -185,27 +197,22 @@ const AboutUsSchool123 = () => {
                 alt="Consultation logo"
               />
               <p className="text-[16px] sm:text-[40px] font-semibold  md:hidden">
-              OUR GOAL
-
+                OUR GOAL
               </p>
             </div>
             <div className="w-[2px] h-52 bg-[#323232] hidden md:block"></div>
             <div className="flex-1 text-center md:text-left order-2 md:order-none">
               <p className="text-[16px] sm:text-[40px] font-semibold pb-4 hidden md:block">
-              GUIDANCE AND SUPPORT
-
+                GUIDANCE AND SUPPORT
               </p>
               <p className="text-[12px] sm:text-[20px] text-justify">
-              We offer personalized guidance to families, helping them choose the right boarding school. Our team of experts is always available to answer questions and provide support, ensuring every family makes an informed choice.
-
-
+                We offer personalized guidance to families, helping them choose
+                the right boarding school. Our team of experts is always
+                available to answer questions and provide support, ensuring
+                every family makes an informed choice.
               </p>
             </div>
           </div>
-
-
-
-          
         </div>
       </div>
     </>

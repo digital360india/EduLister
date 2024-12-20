@@ -13,12 +13,12 @@ const MobileAnimation = () => {
     {
       title: "Guidance from Experts",
       description:
-        "Our skilled consultants are here to provide you with step-by-step guidance, offering personalized advice and support to ensure that every decision made regarding your child’s education is well-informed and confident.",
+        "Our skilled consultants are here to provide you with step-by-step guidance, offering personalized advice and support to ensure that every decision made regarding your child's education is well-informed and confident.",
     },
     {
       title: "Customized Assessments & Mock Exams",
       description:
-        "Edu Lister offers mock exams and personalized assessments to help evaluate your child’s strengths and areas for growth. This allows us to match them with the right school, one that aligns with their abilities and potential.",
+        "Edu Lister offers mock exams and personalized assessments to help evaluate your child's strengths and areas for growth. This allows us to match them with the right school, one that aligns with their abilities and potential.",
     },
     {
       title: "In-Depth School Information",
@@ -32,7 +32,7 @@ const MobileAnimation = () => {
     {
       title: "Complete Support, Every Step of the Way",
       description:
-        "From your first consultation to helping with school applications and post-admission follow-ups, Edu Lister offers continuous support. We’re here to guide you through every part of the process, making it as smooth and successful as possible.",
+        "From your first consultation to helping with school applications and post-admission follow-ups, Edu Lister offers continuous support. We're here to guide you through every part of the process, making it as smooth and successful as possible.",
     },
 
   ];

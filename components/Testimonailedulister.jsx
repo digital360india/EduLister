@@ -17,21 +17,21 @@ const testimonials = [
     image:
       "https://res.cloudinary.com/eduminatti-com/image/upload/v1725877951/Edu123/Eduimages/WhatsApp_Image_2024-09-09_at_4.01.42_PM.jpg",
     description:
-      "EduLister made my transition to a boarding school so much easier. Their platform gave me a clear idea of what to expect, from academics to extracurriculars. I&apos m now at a school that feels like home."
+      "EduLister made my transition to a boarding school so much easier. Their platform gave me a clear idea of what to expect, from academics to extracurriculars. I'm now at a school that feels like home."
   },
   {
     name: "Priya Danu",
     image:
       "https://res.cloudinary.com/eduminatti-com/image/upload/v1725877951/Edu123/Eduimages/WhatsApp_Image_2024-09-09_at_3.59.49_PM.jpg",
     description:
-      "As a parent, I appreciated EduLister's transparency and ease of use. The side-by-side comparisons and expert advice were incredibly helpful. It&apos s a trustworthy platform that truly understands the needs of parents and students alike."
+      "As a parent, I appreciated EduLister's transparency and ease of use. The side-by-side comparisons and expert advice were incredibly helpful. It's a trustworthy platform that truly understands the needs of parents and students alike."
   },
   {
     name: "Shivam Panwar",
     image:
       "https://res.cloudinary.com/eduminatti-com/image/upload/v1725877951/Edu123/Eduimages/WhatsApp_Image_2024-09-09_at_3.54.31_PM.jpg",
     description:
-      "Choosing the right school felt overwhelming at first, but EduLister provided everything I needed to make a confident decision. Thanks to their platform, I’m now in a school where I can excel academically and pursue my passion for sports."
+      "Choosing the right school felt overwhelming at first, but EduLister provided everything I needed to make a confident decision. Thanks to their platform, I'm now in a school where I can excel academically and pursue my passion for sports."
   },
 ];
 
