@@ -49,46 +49,37 @@ export default function page() {
                 <p className="text-black">Educational Content Specialist</p>
               </div>
               <p>
-                Hi, I&apos;m Vaibhav Negi! With a deep passion for education and
-                a knack for crafting meaningful content, I have spent over three
-                years in digital marketing, focusing primarily on the
-                educational sector. Writing has always been my way of connecting
-                with people, and throughout my career, I&apos;ve been fortunate to
-                create impactful content that helps students, parents, and
-                educators alike.
+                Hello there! I&apos;m Vaibhav Negi, an educational content specialist
+                with over three years of experience in creating resources that
+                cater to students and their families. My goal is to make the
+                journey of finding the perfect school seamless, transparent, and
+                stress-free.
               </p>
               <p>
-                My journey in content creation began in digital marketing, where
-                I quickly found my true calling within the education niche.
-                Since then, I&apos;ve collaborated with several educational
-                platforms, offering content that guides students and families,
-                explores emerging trends, and supports educators in their
-                mission. My goal is to create content that informs and inspires
-                curiosity and confidence.
+                At Edu Lister, I focus on developing comprehensive,
+                easy-to-understand guides that bridge the gap between students,
+                parents, and schools. From detailed school overviews to tips on
+                tackling admissions, I&apos;m here to help families navigate this
+                important journey with confidence.
               </p>
               <p>
-                At Go Edu, I specialize in creating insightful, trustworthy, and
-                contextually relevant content for the Indian education
-                landscape. My writing is tailored to empower parents and
-                students in selecting the best boarding schools by providing
-                in-depth details on each institution&apos;s culture, curriculum,
-                and offerings. I&apos;m committed to ensuring each article,
-                guide, and review is as enlightening as it is engaging,
-                capturing the unique aspects of India&apos;s diverse educational
-                framework.
+                What sets my approach apart is my ability to combine data-driven
+                insights with a humanized touch. By blending practicality and
+                creativity, I aim to deliver content that speaks to the needs of
+                parents while keeping the student at the heart of the narrative.
               </p>
               <p>
-                Beyond education, I&apos;ve expanded my experience as a
-                freelance writer with Sportskeeda, diving into the sports domain
-                and refining my versatility in adapting to different audiences.
-                This diversity in experience has sharpened my ability to
-                resonate with readers, no matter the topic while maintaining
-                quality and authenticity in each piece.
+                When I&apos;m not researching schools or writing actionable advice,
+                I&apos;m exploring innovative ways to make education more accessible
+                and inclusive. My background in digital storytelling enables me
+                to craft meaningful content that inspires informed
+                decision-making.
               </p>
               <p>
-                At Go Edu, my mission is to simplify and enrich the school
-                selection process by delivering content that helps students and
-                their families make informed decisions.
+                With Edu Lister, my mission is to ensure every family has access
+                to the tools and information they need to choose the best
+                educational path. Let&apos;s discover the possibilities, one step at
+                a time!
               </p>
             </div>
           </div>

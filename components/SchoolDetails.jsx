@@ -42,7 +42,6 @@ const CircularProgressWithIcon = ({ value, svgSrc, svgAlt }) => {
         })}
       />
 
-     
       <div className="absolute inset-0 flex justify-center items-center">
         <Image
           src={svgSrc}
@@ -255,15 +254,13 @@ const SchoolDetails = ({ school, reviews, city, id }) => {
     averge();
   }, []);
 
-  const [slideClass, setSlideClass] = useState("translate-x-0");
+  const [slideClass, setSlideClass] = useState("translate-x-full");
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleScroll = () => {
     const currentScrollPosition = window.scrollY;
 
-    if (currentScrollPosition < lastScrollY) {
-      setSlideClass("translate-x-full");
-    } else {
+    if (currentScrollPosition > lastScrollY) {
       setSlideClass("translate-x-0");
     }
 
@@ -411,9 +408,10 @@ const SchoolDetails = ({ school, reviews, city, id }) => {
               </p>
               <hr className="w-auto md:w-[550px] h-0.5 bg-black" />
 
-              <div dangerouslySetInnerHTML={{__html:school?.Long_Description}} className="article-container text-[16px] h-[323px] md:w-[570px] text-[#898989] text-justify p-2 overflow-y-scroll">
-                
-              </div>
+              <div
+                dangerouslySetInnerHTML={{ __html: school?.Long_Description }}
+                className="article-container text-[16px] h-[323px] md:w-[570px] text-[#898989] text-justify p-2 overflow-y-scroll"
+              ></div>
 
               <section className="space-y-2    md:space-y-5">
                 <div>
@@ -433,7 +431,7 @@ const SchoolDetails = ({ school, reviews, city, id }) => {
                           </p>
                         </div>
                         <p className="text-[16px] pl-8 text-[#323232]">
-                          ₹{school?.feefrom} - ₹{school?.feeto} 
+                          ₹{school?.feefrom} - ₹{school?.feeto}
                         </p>
                       </div>
                     )}
@@ -533,7 +531,6 @@ const SchoolDetails = ({ school, reviews, city, id }) => {
                 <div className="md:flex text-center md:w-1/2 sm:w-auto md:items-center ">
                   <div className="space-y-2 flex flex-col items-center ">
                     <div className="flex md:items-center md:justify-center relative px-2 md:px-0  md:p-6 md:pb-4 lg:p-0 w-full">
-                      
                       <div>
                         <CircularProgressWithIcon
                           value={school?.Infrastructure || 0}
@@ -554,7 +551,6 @@ const SchoolDetails = ({ school, reviews, city, id }) => {
                             `${Math.round(school.Infrastructure)}%`}
                         </p>
                       </div>
-                      
                     </div>
                   </div>
                 </div>
@@ -840,8 +836,6 @@ const SchoolDetails = ({ school, reviews, city, id }) => {
             </Swiper>
           </section>
         </div>
-
-        
       </div>
     </>
   );

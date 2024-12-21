@@ -24,76 +24,80 @@ export default function page() {
             />
           </div>
           <p className="text-[24px] font-semibold">
-            Welcome to Go Edu&apos;s Privacy Policy
+            Edu Lister: Your Privacy, Our Priority{" "}
           </p>
           <p>
-            At Go Edu, protecting your privacy is a top priority. This policy
-            outlines the types of information we collect, how it&apos;s used,
-            and our commitment to secure your data. It applies specifically to
-            Go Edu&apos;s website and related electronic communications.
+            At Edu Lister, we are deeply committed to respecting your privacy
+            and safeguarding your personal information. This Privacy Policy
+            outlines how we collect, use, and protect your data while ensuring
+            transparency in all our practices.
           </p>
           <p>
             {" "}
-            <p className="text-[24px] font-semibold">
-              Information We Collect and How It&apos;s Used
-            </p>
-            Go Edu collects various details to enhance your experience. This
-            includes basic personal information, connection details, and
-            user-generated content like feedback. Your information helps us
-            deliver tailored services, notify you of updates, and ensure a
-            smooth, personalized experience.
+            <p className="text-[24px] font-semibold">What We Collect</p>
+            To provide you with a personalized experience, we collect basic
+            information such as your name, contact details, and preferences.
+            Additionally, we may gather data on your interactions with our
+            platform to refine and improve our services.
+          </p>
+
+          <h2 className="text-[24px] font-semibold">How We Use Your Data</h2>
+          <p className="mb-4">Your information is used to:</p>
+          <ul className="list-disc pl-6">
+            <li>Provide tailored school recommendations</li>
+            <li>
+              Inform you about admission updates and educational opportunities
+            </li>
+            <li>
+              Enhance your overall user experience through data-driven
+              improvements
+            </li>
+          </ul>
+
+          <p>
+            <p className="text-base font-semibold mb-1">Secure Data Handling</p>
+            We use industry-standard security protocols to protect your data
+            from unauthorized access or misuse. While no system can guarantee
+            absolute security, we continuously update our measures to reduce
+            risks.
           </p>
           <p>
             <p className="text-base font-semibold mb-1">
-              Automated Data Collection and Purpose
+              Data Sharing with Trust
             </p>
-            To improve functionality, our site employs technology that gathers
-            insights into device usage, browsing activity, and preferences. This
-            allows us to deliver optimized services, maintain account
-            communication, fulfill agreements, and keep you updated on any
-            website or service changes.
-          </p>
-          <p>
-            <p className="text-base font-semibold mb-1">
-              Our Commitment to Data Security
-            </p>
-            Safeguarding your information is central to our mission. Go Edu has
-            established robust security measures to prevent unauthorized access
-            or alteration. However, while we take extensive precautions,
-            absolute security over the internet cannot be guaranteed.
+            Any data shared with third-party partners is done to enhance your
+            experience and only with your explicit consent. We never sell your
+            data or use it beyond the scope of improving our services.
           </p>
           <p>
             <p className="text-[24px] font-semibold">
-              Responsible Information Sharing
+              Your Control, Your Rights
             </p>
-            Go Edu may share aggregated, anonymized information, or personal
-            data with affiliates and trusted partners to support our services.
-            Personal data sharing occurs only as outlined here, with your
-            consent, or for specific services you&apos;ve requested.
+            You have the right to access, modify, or delete your personal
+            information at any time. We&apos;re here to assist you in exercising
+            these rights whenever needed.
           </p>
           <p>
             <p className="text-[24px] font-semibold">
-              Updates to Our Privacy Policy{" "}
+              Policy Updates and Communication
             </p>
-            As part of our commitment to transparency, Go Edu regularly reviews
-            and updates its privacy practices. Any significant updates will be
-            noted on our homepage, ensuring that you remain informed.
+            As Edu Lister evolves, so might our privacy practices. Significant
+            updates to this policy will be communicated to you promptly to
+            ensure you remain informed.
           </p>
+
           <p>
-            <p className="text-[24px] font-semibold">
-              Changes to Our Privacy Policy
-            </p>
-            We regularly update our privacy policy on this page. Significant
-            changes in how we handle user information will be communicated
-            through a notice on the website's homepage.
-          </p>
-          <p>
-            <p className="text-[24px] font-semibold">How to Reach Us</p>
-            We&apos;re here for any privacy-related inquiries or feedback. You
-            can contact us directly via email or phone for assistance: :
+            <p className="text-[24px] font-semibold">Contact Us:</p>
+            For privacy-related inquiries or assistance, reach out to us at:
             <br />
             <p>Email: info@goedu.in</p>
             <p>Contact Number:01353530324, 9557695360</p>
+          </p>
+
+          <p>
+            Thank you for choosing Edu Lister. We&apos;re honored to be a part of
+            your educational journey and are committed to protecting your
+            privacy every step of the way.
           </p>
         </div>
       </div>
