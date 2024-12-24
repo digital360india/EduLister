@@ -57,7 +57,7 @@ const CircularProgressWithIcon = ({ value, svgSrc, svgAlt }) => {
 
 const facility = [
   {
-    imageSrc: "/Swimming.svg",
+    imageSrc: "/swimming.svg",
     facility: "Swimming Pool",
     check: "Swimming_Pool",
   },
@@ -97,13 +97,13 @@ const facility = [
     check: "Tennis_Court",
   },
   {
-    imageSrc: "/Playground.svg",
+    imageSrc: "/playground.svg",
     facility: "Playground",
     check: "Play_Ground",
   },
 
   {
-    imageSrc: "/Badminton.svg",
+    imageSrc: "/badminton.svg",
     facility: "Badminton Court",
     check: "Badminton_Court",
   },
@@ -516,6 +516,51 @@ const SchoolDetails = ({ school, reviews, city, id }) => {
                     </div>
                   </div>
                 </section>
+              </div>
+            </section>
+          </div>
+
+          <div className="overflow-hidden pl-12">
+            <section
+              className={`bg-background-light mb-10 mt-10 text-white p-4 w-full max-w-[631px] h-[161px] flex rounded-l-xl justify-center items-center top-20 right-0 transform transition-transform duration-[1800ms] ease-in-out ${slideClass} sm:hidden`}
+            >
+              <div className="text-left text-[16px] w-full p-2">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-4">
+                    <div className="font-semibold text-white">School Type</div>
+                    <p className="text-white">
+                      {school?.day_schools ? "Day-Boarding" : "Full-Boarding"}
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="font-semibold text-white">Curriculum</div>
+                    <p className="text-white">
+                      {school?.cbse_schools && "CBSE "}
+                      {school?.icse_isc_schools && "ICSE/ISC "}
+                      {school?.cie_schools && "CIE "}
+                      {school?.ib_schools && "IB "}
+                      {school?.igcse_schools && "IGCSE"}
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="font-semibold text-white">Classes</div>
+                    <p className="text-white">
+                      {school?.classfrom} to {school?.classto}
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="font-semibold text-white">
+                      School Gender
+                    </div>
+                    <p className="text-white">
+                      {school?.coed_schools
+                        ? "Co-Ed"
+                        : school?.girls_schools
+                        ? "Girls School"
+                        : "Boys School"}
+                    </p>
+                  </div>
+                </div>
               </div>
             </section>
           </div>
