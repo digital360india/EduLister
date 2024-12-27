@@ -18,13 +18,13 @@ export default function Popup() {
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setIsPopupVisible(true);
-  //   }, 50000);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIsPopupVisible(true);
+    }, 5000);
 
-  //   return () => clearInterval(timer);
-  // }, []);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -83,7 +83,7 @@ export default function Popup() {
 
             <div className="w-[80vw] h-[539px] hidden md:block z-0 ">
               <Image
-                src="/popup.svg"
+                src="/bookingformgoedu.svg"
                 alt="School choice"
                 width={1000}
                 height={1000}
