@@ -14,13 +14,13 @@ const Heroedulister = () => {
         className="w-full h-full object-cover hidden md:block"
       />
 
-      <div className="md:hidden">
+      <div className="md:hidden w-full h-full">
         <Image
-          src="/PINK 1.svg"
+          src="/PINK 1.png"
           alt="School choice"
           width={1000}
           height={1000}
-          className="w-full h-[82vh] object-cover  "
+          className="w-full h-full object-cover  "
         />
       </div>
     </div>
