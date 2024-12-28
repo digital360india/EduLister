@@ -52,7 +52,7 @@ const Formedulister= () => {
       <div className="flex gap-20 justify-between items-center">
         <div className="w-[795px] h-[539px] md:block hidden  ">
           <Image
-            src="/bookingformgoedu.svg"
+            src="/bookingformgoedu.png"
             alt="School choice"
             width={1000}
             height={1000}
@@ -75,7 +75,7 @@ const Formedulister= () => {
               placeholder="Your name"
               value={formData.name}
               onChange={handleChange}
-              className="p-2 border-b-2 border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded lg:w-full sm:border-[#D9D9D9]"
+              className="p-2 border-b-2 border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded lg:w-[498px] sm:border-[#D9D9D9]"
             />
             {/* <input
             type="email"
