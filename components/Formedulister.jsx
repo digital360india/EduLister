@@ -75,7 +75,7 @@ const Formedulister= () => {
               placeholder="Your name"
               value={formData.name}
               onChange={handleChange}
-              className="p-2 border-b-2 border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded sm:w-[498px] sm:border-[#D9D9D9]"
+              className="p-2 border-b-2 border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded lg:w-full sm:border-[#D9D9D9]"
             />
             {/* <input
             type="email"

@@ -101,7 +101,7 @@ export default function Home() {
       <Formedulister />
       <Mapedulister />
       <WhyChooseUsedulister />
-      <div className="md:hidden">
+      <div className="xl:hidden">
         <MobileAnimation />
       </div>
       <Aboutedulister />
