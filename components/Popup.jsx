@@ -205,7 +205,7 @@ export default function Popup() {
                     <option value="Class 12">Class 12</option>
                   </select>
                 </div>
-                <div className="md:pt-20 pt-8 cursor-pointer">
+                <div className="md:pt-4 pt-8 cursor-pointer">
                   {/* <button
                     type="submit"
                     className="md:w-[177px] md:h-[60px] md:px-0 px-8 md:py-0 py-3  bg-[#1B6EA1] text-white p-2 rounded-lg hover:bg-[#1b6ea1c9]"

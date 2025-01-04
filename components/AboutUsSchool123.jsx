@@ -88,8 +88,8 @@ const AboutUsSchool123 = () => {
           <div className="flex flex-col md:flex-row justify-between items-center  md:space-x-10">
             <div className="flex items-center justify-center order-1 md:order-none gap-5 md:gap-0">
               <img
-                src="./ourpassion.svg"
-                className="w-[100px] h-[110px] md:h-[160px] md:w-[150px]"
+                src="./Untitled design (12).png"
+                className="w-[100px] h-[110px] md:h-[130px] md:w-[200px]"
                 alt="Passion logo"
               />
               <p className="text-[16px] sm:text-[40px] font-semibold md:hidden">
@@ -141,8 +141,8 @@ const AboutUsSchool123 = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-10">
             <div className="flex items-center justify-center order-1 md:order-none gap-8 md:gap-0">
               <img
-                src="/consult.svg"
-                className="w-[100px] h-[100px] md:h-[160px] md:w-[150px]"
+                src="/Untitled design (10).png"
+                className="w-[100px] h-[100px] md:h-[140px] md:w-[150px]"
                 alt="Consultation logo"
               />
               <p className="text-[16px] sm:text-[40px] font-semibold  md:hidden">
@@ -183,7 +183,7 @@ const AboutUsSchool123 = () => {
                 Your Path to Informezzd Choices
               </p>
               <img
-                src="/joinus.svg"
+                src="/Untitled design (11).png"
                 className="w-[100px] h-[130px] md:h-[160px] md:w-[150px]"
                 alt="Join us logo"
               />

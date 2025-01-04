@@ -48,7 +48,7 @@ const WhyChooseUsedulister = () => {
 
           <div>
             <Image
-              src="/leftframe.svg"
+              src="/Frame 45.svg"
               width={1000}
               height={1000}
               alt="img"
@@ -68,7 +68,7 @@ const WhyChooseUsedulister = () => {
 
           <div>
             <Image
-              src="/rightframe.svg"
+              src="/Frame 46.svg"
               width={1000}
               height={1000}
               alt="img"
