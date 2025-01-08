@@ -187,7 +187,7 @@ export default function ConsultationPopup({ setClose }) {
                 <option value="Class 12">Class 12</option>
               </select>
             </div>
-            <div className="md:pt-20 pt-8 cursor-pointer">
+            <div className="md:pt-4 pt-8 cursor-pointer">
 
 
               <button
