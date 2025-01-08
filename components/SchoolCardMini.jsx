@@ -23,6 +23,7 @@ const SchoolCardMini = ({ data, index, citySlug }) => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
+
   const [open, setOpen] = useState(false);
   const [schoolName, setSchoolName] = useState("");
   const [school, setSchool] = useState("");
@@ -134,10 +135,13 @@ const SchoolCardMini = ({ data, index, citySlug }) => {
               </div>
               <div className="text-[#898989] flex pt-[1px] flex-col ">
                 <p className="text-[12px]  text-[#898989]">Annual Fees</p>
+                {(data?.feilds?.feefrom && data?.feilds?.feeto) !== undefined ? (
                 <p className="text-[16px] xl:text-[22px] text-background-dark">
                   ₹{Number(data?.fields?.feefrom).toLocaleString("en-IN")} - ₹
                   {Number(data?.fields?.feeto).toLocaleString("en-IN")}
-                </p>
+                </p>):(
+                  <p className="text-[16px] xl:text-[22px] text-background-dark">Not Specified</p>
+                )}
               </div>
 
               <div className="w-full h-[60px] bg-background-dark rounded-l-2xl flex justify-center items-center float-right">
@@ -264,10 +268,23 @@ const SchoolCardMini = ({ data, index, citySlug }) => {
             />
             <div className="text-[#505050] flex pt-[1px] flex-col ">
               <p className="text-[12px] text-[#898989]">Annual Fees</p>
-              <p className="text-[18px] font-semibold text-background-dark ">
+              {
+                !(data.fields.feefrom && data.fields.feeto ) ? (
+                  <p className="text-[18px] font-semibold text-background-dark ">
+                   Not Specified
+                  </p>
+                 
+                ) : (
+                  <p className="text-[18px] font-semibold text-background-dark ">
+                  ₹{Number(data?.fields?.feefrom).toLocaleString("en-IN")} - ₹
+                  {Number(data?.fields?.feeto).toLocaleString("en-IN")}
+                </p>
+                )
+              }
+              {/* <p className="text-[18px] font-semibold text-background-dark ">
                 ₹{Number(data?.fields?.feefrom).toLocaleString("en-IN")} - ₹
                 {Number(data?.fields?.feeto).toLocaleString("en-IN")}
-              </p>
+              </p> */}
             </div>
 
             {/* <div className="w-full bg-[#1B6EA1] rounded-l-2xl flex justify-center items-center float-right">

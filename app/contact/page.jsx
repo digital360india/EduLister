@@ -54,13 +54,13 @@ const Contact = () => {
                 <div className="flex justify-between">
                   <div className="flex gap-4 pt-5  ">
                     <a
-                      href="https://www.instagram.com/goedu_india/?igsh=MWtyaGFocGo4cHA0bQ%3D%3D"
+                      href="https://www.instagram.com/edulister_india/?igsh=MWxkMzV5cDNndnplaQ%3D%3D"
                       target="_blank"
                     >
                       <BsInstagram className="w-5 h-5" />
                     </a>
                     <a
-                      href="https://www.facebook.com/people/GoEdu/61552427439719/"
+                      href="https://www.facebook.com/edulisterindia?mibextid=ZbWKwL"
                       target="_blank"
                     >
                       <BiLogoFacebook className="w-5 h-5" />

@@ -100,7 +100,7 @@ export const Footer = () => {
             </div>
             <div className="text-xl  flex gap-14 md:gap-7 mt-2  md:mt-4">
               <Link
-                href="https://www.facebook.com/profile.php?id=61552427439719"
+                href="https://www.facebook.com/edulisterindia?mibextid=ZbWKwL"
                 target="_blank"
               >
                 <BsFacebook />
@@ -119,7 +119,7 @@ export const Footer = () => {
               </Link> */}
 
               <Link
-                href="https://www.instagram.com/goedu_india?igsh=MWtyaGFocGo4cHA0bQ=="
+                href="https://www.instagram.com/edulister_india/?igsh=MWxkMzV5cDNndnplaQ%3D%3D"
                 target="_blank"
               >
                 <BsInstagram />
