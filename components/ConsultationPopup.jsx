@@ -4,6 +4,9 @@ import { RxCross1 } from "react-icons/rx";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { base } from "@/app/api/airtable";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+
 
 export default function ConsultationPopup({ setClose }) {
   const [loading, setLoading] = useState(false);
@@ -125,68 +128,21 @@ export default function ConsultationPopup({ setClose }) {
               className="p-2 border-b-2 border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded sm:w-[462px] sm:border-[#D9D9D9]"
             />
             <div className="flex">
-              <select className="w-[80px] md:w-[100px] h-[39px] border-b-2 border-[#D9D9D9] rounded-l placeholder:text-[#898989] sm:border sm:rounded-l sm:p-2 sm:border-[#D9D9D9]">
-                <option value="🇮🇳">🇮🇳 +91</option>
-                <option value="🇺🇸">🇺🇸 +1</option>
-                <option value="🇬🇧">🇬🇧 +44</option>
-                <option value="🇨🇦">🇨🇦 +1</option>
-                <option value="🇦🇺">🇦🇺 +61</option>
-                <option value="🇳🇿">🇳🇿 +64</option>
-                <option value="🇿🇦">🇿🇦 +27</option>
-                <option value="🇸🇬">🇸🇬 +65</option>
-                <option value="🇦🇪">🇦🇪 +971</option>
-                <option value="🇸🇦">🇸🇦 +966</option>
-                <option value="🇫🇷">🇫🇷 +33</option>
-                <option value="🇩🇪">🇩🇪 +49</option>
-                <option value="🇮🇹">🇮🇹 +39</option>
-                <option value="🇪🇸">🇪🇸 +34</option>
-                <option value="🇧🇷">🇧🇷 +55</option>
-                <option value="🇲🇽">🇲🇽 +52</option>
-                <option value="🇯🇵">🇯🇵 +81</option>
-                <option value="🇰🇷">🇰🇷 +82</option>
-                <option value="🇨🇳">🇨🇳 +86</option>
-                <option value="🇹🇷">🇹🇷 +90</option>
-                <option value="🇷🇺">🇷🇺 +7</option>
-                <option value="🇮🇩">🇮🇩 +62</option>
-                <option value="🇵🇭">🇵🇭 +63</option>
-                <option value="🇻🇳">🇻🇳 +84</option>
-                <option value="🇹🇭">🇹🇭 +66</option>
-                <option value="🇲🇾">🇲🇾 +60</option>
-                <option value="🇳🇬">🇳🇬 +234</option>
-                <option value="🇪🇬">🇪🇬 +20</option>
-                <option value="🇮🇱">🇮🇱 +972</option>
-                <option value="🇰🇪">🇰🇪 +254</option>
-                <option value="🇦🇷">🇦🇷 +54</option>
-                <option value="🇨🇱">🇨🇱 +56</option>
-                <option value="🇵🇪">🇵🇪 +51</option>
-                <option value="🇨🇴">🇨🇴 +57</option>
-                <option value="🇻🇪">🇻🇪 +58</option>
-                <option value="🇺🇦">🇺🇦 +380</option>
-                <option value="🇵🇱">🇵🇱 +48</option>
-                <option value="🇳🇱">🇳🇱 +31</option>
-                <option value="🇧🇪">🇧🇪 +32</option>
-                <option value="🇸🇪">🇸🇪 +46</option>
-                <option value="🇨🇭">🇨🇭 +41</option>
-                <option value="🇦🇹">🇦🇹 +43</option>
-                <option value="🇩🇰">🇩🇰 +45</option>
-                <option value="🇫🇮">🇫🇮 +358</option>
-                <option value="🇮🇪">🇮🇪 +353</option>
-                <option value="🇳🇴">🇳🇴 +47</option>
-                <option value="🇨🇿">🇨🇿 +420</option>
-                <option value="🇸🇰">🇸🇰 +421</option>
-                <option value="🇷🇴">🇷🇴 +40</option>
-                <option value="🇭🇺">🇭🇺 +36</option>
-              </select>
-              <input
-                required
-                type="tel"
-                name="phone"
-                placeholder="Your mobile number"
+              <PhoneInput
+                country={"in"}
                 value={formData.phone}
-                onChange={handleChange}
-                className="w-full h-[39px] p-2 border-b-2 border-[#D9D9D9] placeholder:text-[#898989] sm:border sm:rounded-r sm:w-[398px] sm:border-[#D9D9D9]"
+                onChange={handlePhoneChange}
+                inputStyle={{
+                  width: "100%",
+                  height: "40px",
+                  borderBottom: "2px solid #D9D9D9",
+                }}
+                buttonStyle={{
+                  border: "2px solid #D9D9D9",
+                }}
               />
             </div>
+
 
             <div className="flex md:gap-20 gap-8">
               <select
