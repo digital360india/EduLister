@@ -4,7 +4,6 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { StarRatingschool, StarRating } from "./StarRating";
 import { Line } from "rc-progress";
 import ReviewForm from "./ReviewForm";
-import Enquire from "./Enquire";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -298,11 +297,7 @@ const SchoolDetails = ({ school, reviews, city, id }) => {
                   >
                     Enquire Now
                   </button>
-                  <Enquire
-                    isOpen={isPopupOpen}
-                    onClose={closePopup}
-                    school={school?.name}
-                  />
+                 
                 </div>
               </div>
               <StarRatingschool
@@ -338,11 +333,7 @@ const SchoolDetails = ({ school, reviews, city, id }) => {
                   >
                     Enquire Now
                   </button>
-                  <Enquire
-                    isOpen={isPopupOpen}
-                    onClose={closePopup}
-                    school={school?.name}
-                  />
+                 
                 </div>
               </div>
               <StarRating

@@ -14,7 +14,6 @@ import { RiGraduationCapFill } from "react-icons/ri";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { StarRating, StarRatingper } from "./StarRating";
 import { PiStudentFill } from "react-icons/pi";
-import Enquire from "./Enquire";
 import CategoryGalleryGoEdu from "./CategoryGalleryGoEdu";
 import ConsultationPopup from "./ConsultationPopup";
 
@@ -400,11 +399,7 @@ const SchoolCardMini = ({ data, index, citySlug }) => {
               <ConsultationPopup setClose={toggleBookingClosePopup} />
             )}
 
-      <Enquire
-         isOpen={isPopupOpen}
-         onClose={closePopup}
-         school={school?.name}
-      />
+     
     </>
   );
 };

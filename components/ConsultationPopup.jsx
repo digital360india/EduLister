@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Image from "next/image"; // Import Image from Next.js
 import { RxCross1 } from "react-icons/rx";
 import axios from "axios";
+import { toast } from "react-toastify";
+import { base } from "@/app/api/airtable";
 
 export default function ConsultationPopup({ setClose }) {
   const [loading, setLoading] = useState(false);
@@ -11,7 +13,7 @@ export default function ConsultationPopup({ setClose }) {
     email: "",
     phone: "",
     classes: "",
-    source : "Schools123 - https://schools123.vercel.app",
+    source :"EduLister - www.edulister.com",
 
   });
 
@@ -22,33 +24,59 @@ export default function ConsultationPopup({ setClose }) {
       [name]: value,
     }));
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loader and disable button
-    console.log(formData);
+    setLoading(true);
+
+    const airtablePayload = [
+      {
+        fields: {
+          Name: formData.name,
+          email: formData.email,
+          Mobile: formData.phone,
+          grade: formData.classes,
+          Url: window.location.href,
+        },
+      },
+    ];
     try {
-      const response = await axios.post(
+      await base("counsellorForm").create(
+        airtablePayload,
+        function (err, records) {
+          if (err) {
+            console.error("Airtable Error:", err);
+            alert("Airtable submission failed. Please try again.");
+            return;
+          }
+
+          records.forEach(() => {
+            console.log("Airtable submission successful!");
+          });
+        }
+      );
+
+      const emailResponse = await axios.post(
         "https://goedunodemailer.onrender.com/send-email",
         formData
       );
-      if (response.status === 200) {
-        alert("Form submitted successfully.");
+
+      if (emailResponse.status === 200) {
+        toast.success("Form Submitted Successfully!");
         setFormData({
           name: "",
           email: "",
           phone: "",
           classes: "",
-          source : "Schools123 - https://schools123.vercel.app",
-
+          source: "EduLister - www.edulister.com",
         });
       } else {
-        alert("Try again");
+        alert("Email submission failed. Please try again.");
       }
     } catch (error) {
+      console.error("Error occurred:", error);
       alert("An error occurred. Please try again.");
     } finally {
-      setLoading(false); // Re-enable button
+      setLoading(false);
     }
   };
   return (
