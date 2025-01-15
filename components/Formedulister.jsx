@@ -1,5 +1,5 @@
 "use client";
-import { base } from "@/app/api/airtable";
+import { base, baseRe } from "@/app/api/airtable";
 import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
