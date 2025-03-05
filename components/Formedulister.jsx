@@ -7,14 +7,14 @@ import { toast } from "react-toastify";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-const Formedulister= () => {
+const Formedulister = () => {
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
 
     phone: "",
-    source : "Schools123 - https://schools123.vercel.app",
+    source: "Schools123 - https://schools123.vercel.app",
   });
 
   const handleChange = (e) => {
@@ -83,33 +83,33 @@ const Formedulister= () => {
 
   return (
     <>
-      <div className="flex gap-20 justify-between items-center">
-        <div className="w-[795px] h-[539px] md:block hidden  ">
+      <div className="relative w-full h-[510px] md:h-[539px]">
+        <div className="absolute inset-0 z-0 md:block hidden w-[50%]">
           <Image
             src="/bookingformgoedu.png"
             alt="School choice"
-            width={1000}
-            height={1000}
-            className="w-[795px] h-[539px] object-cover"
+            layout="fill"
+            objectFit="cover"
+            className="w-[50%] h-full"
           />
         </div>
 
-        <div className="md:w-1/2 w-full p-6 bg-white">
-          <div className="md:hidden block w-[226px] text-[20px]">
+        <div className="absolute md:right-10  top-1/2 transform -translate-y-1/2 z-10 md:w-fit w-full p-6 bg-white bg-opacity-90 rounded-lg shadow-lg">
+          <div className="md:hidden block font-bld  text-[20px] text-center">
             Confuse to choose the Best School ?
           </div>
-          <h3 className="md:text-xl mt-8 text-[12px] mb-6 text-[#323232]">
+          <h3 className="md:text-xl mt-8 text-[16px] mb-6 text-[#323232]">
             Fill this form and get in touch with our counsellor
           </h3>
           <form onSubmit={handleSubmit} className="space-y-7">
             <input
-            required
+              required
               type="text"
               name="name"
               placeholder="Your name"
               value={formData.name}
               onChange={handleChange}
-              className="p-2 border-b-2 border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded lg:w-[498px] sm:border-[#D9D9D9]"
+              className="p-2 border border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded lg:w-[498px] sm:border-[#D9D9D9]"
             />
             {/* <input
             type="email"
@@ -117,7 +117,7 @@ const Formedulister= () => {
             placeholder="Your email"
             value={formData.email}
             onChange={handleChange}
-            className="p-2 border-b-2 border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded sm:w-[462px] sm:border-[#D9D9D9]"
+            className="p-2 border border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded sm:w-[462px] sm:border-[#D9D9D9]"
           /> */}
             <div className="flex w-full lg:w-[498px]">
               <PhoneInput
@@ -127,10 +127,10 @@ const Formedulister= () => {
                 inputStyle={{
                   width: "100%",
                   height: "40px",
-                  borderBottom: "2px solid #D9D9D9",
+                  borderBottom: "1px solid #D9D9D9",
                 }}
                 buttonStyle={{
-                  border: "2px solid #D9D9D9",
+                  border: "1px solid #D9D9D9",
                 }}
               />
             </div>
@@ -140,7 +140,7 @@ const Formedulister= () => {
               name="class"
               value={formData.class}
               onChange={handleChange}
-              className="p-2 border-b-2 border-[#D9D9D9] rounded md:w-[143px] w-[120px] h-[39px] placeholder:text-[#898989] md:border md:rounded "
+              className="p-2 border border-[#D9D9D9] rounded md:w-[143px] w-[120px] h-[39px] placeholder:text-[#898989] md:border md:rounded "
             >
               <option value="" className="text-[#898989]">
                 Class
@@ -151,7 +151,7 @@ const Formedulister= () => {
               name="board"
               value={formData.board}
               onChange={handleChange}
-              className="p-2 border-b-2 border-[#D9D9D9] rounded md:w-[143px] w-[120px] h-[39px] placeholder:text-[#898989] md:border md:rounded"
+              className="p-2 border border-[#D9D9D9] rounded md:w-[143px] w-[120px] h-[39px] placeholder:text-[#898989] md:border md:rounded"
             >
               <option value="" className="text-[#898989]">
                 BOARD
@@ -177,7 +177,6 @@ const Formedulister= () => {
               >
                 {loading ? "Submitting..." : "Submit"}
               </button>
-              
             </div>
           </form>
         </div>

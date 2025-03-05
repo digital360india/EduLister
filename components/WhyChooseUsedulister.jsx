@@ -99,7 +99,7 @@ const WhyChooseUsedulister = () => {
                 recommendations are genuinely in your child&apos;s best interest.
               </p>
             </div>
-            <div className="w-[400px] h-[200px]">
+            <div className="w-[300px] h-[135px]">
               <h1 className="text-[#323232] text-[1rem]">
                 Complete Support, Every Step of the Way
               </h1>

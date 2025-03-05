@@ -159,7 +159,7 @@ const Testimonailedulister = () => {
                       width={1000}
                       height={1000}
                       alt={testimonial.name}
-                      className="md:w-[70px] md:h-[70px] w-[60px] h-[60px] rounded-full"
+                      className="md:w-[70px] md:h-[70px] w-[60px] h-[60px] rounded-full object-cover object-top"
                     />
                   </div>
                 </div>

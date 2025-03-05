@@ -92,7 +92,7 @@ export default function ConsultationPopup({ setClose }) {
       <div className="relative md:flex   gap-5  md:items-center bg-white rounded-lg shadow-lg w-full max-w-[90vw] md:max-w-[80vw] ">
         <button
           onClick={setClose}
-          className="absolute bg-background-dark px-1 py-1 md:px-2 z-50 rounded-full  md:py-2 top-2 right-2 text-2xl font-bold text-white hover:text-white"
+          className="absolute bg-background-dark p-1 md:px-2 z-50 rounded-full  md:py-2 top-3 right-2 text-xl font-bold text-white hover:text-white"
         >
           <div className="flex justify-center items-center">
             <RxCross1 />
@@ -109,11 +109,11 @@ export default function ConsultationPopup({ setClose }) {
           />
         </div>
 
-        <div className="w-full z-50 md:w-[470px] h-full rounded-l-2xl p-8 md:absolute md:top-0 md:right-14 bg-white">
-          <h3 className=" md:text-xl mb-6 text-[#323232]">
+        <div className="w-full z-50 md:w-[470px] h-full rounded-lg md:rounded-l-2xl md:p-8 md:absolute md:top-0 md:right-14 bg-white">
+          <h3 className=" md:text-xl font-bold pt-4 px-5 w-[85%] text-[#323232]">
             Fill this form and get in touch with our counsellor
           </h3>
-          <form onSubmit={handleSubmit} className="space-y-7 md:space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-7 md:space-y-6 p-5">
             <input
               required
               type="text"
@@ -121,7 +121,7 @@ export default function ConsultationPopup({ setClose }) {
               placeholder="Your name"
               value={formData.name}
               onChange={handleChange}
-              className="p-2 border-b-2 border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded  sm:border-[#D9D9D9]"
+              className="p-2 border border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded  sm:border-[#D9D9D9]"
             />
             <input
               required
@@ -130,11 +130,11 @@ export default function ConsultationPopup({ setClose }) {
               placeholder="Your email"
               value={formData.email}
               onChange={handleChange}
-              className="p-2 border-b-2 border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded  sm:border-[#D9D9D9]"
+              className="p-2 border border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded  sm:border-[#D9D9D9]"
             />
            <div className="flex">
               <PhoneInput
-                className="w-full border-[#D9D9D9] border-b-2 rounded md:border md:rounded"
+                className="w-full border-[#D9D9D9] border rounded md:border md:rounded"
                 country={"in"}
                 value={formData.phone}
                 onChange={handlePhoneChange}
@@ -144,7 +144,7 @@ export default function ConsultationPopup({ setClose }) {
                   border: "none",
                 }}
                 buttonStyle={{
-                  border: "2px solid #D9D9D9",
+                  border: "1px solid #D9D9D9",
                 }}
               />
             </div>
@@ -155,7 +155,7 @@ export default function ConsultationPopup({ setClose }) {
                 name="classes"
                 value={formData.classes}
                 onChange={handleChange}
-                className="p-2 border-b-2 border-[#D9D9D9] rounded w-full h-[39px] placeholder:text-[#898989] md:border md:rounded "
+                className="p-2 border border-[#D9D9D9] rounded w-full h-[39px] placeholder:text-[#898989] md:border md:rounded "
               >
                 <option value="" className="text-[#898989]">
                   Class
