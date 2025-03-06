@@ -294,7 +294,7 @@ const SchoolCardMini = ({ data, index, citySlug }) => {
             </div>
             </div>
             </div> */}
-            <div className="flex  space-x-12 p-3 font-semibold  text-[10px] bg-background-dark rounded-l-2xl text-white   w-[315px]">
+            <div className="flex  space-x-12 p-3 font-semibold  text-[10px] bg-background-dark rounded-l-2xl text-white  w-[109%] md:w-[315px]">
               <div className="space-y-3">
                 <div className="flex flex-col ">
                   <p className="font-bold text-[11px]">Curriculum</p>
