@@ -59,6 +59,7 @@ const SchoolCardMini = ({ data, index, citySlug }) => {
     const toggleBookingClosePopup = () => {
       setIsOpenpopup(false);
     };
+    // console.log("school data",data)
 
   return (
     <>
@@ -134,7 +135,7 @@ const SchoolCardMini = ({ data, index, citySlug }) => {
               </div>
               <div className="text-[#898989] flex pt-[1px] flex-col ">
                 <p className="text-[12px]  text-[#898989]">Annual Fees</p>
-                {(data?.feilds?.feefrom && data?.feilds?.feeto) !== undefined ? (
+                {(data?.fields?.feefrom && data?.fields?.feeto) !== undefined ? (
                 <p className="text-[16px] xl:text-[22px] text-background-dark">
                   ₹{Number(data?.fields?.feefrom).toLocaleString("en-IN")} - ₹
                   {Number(data?.fields?.feeto).toLocaleString("en-IN")}

@@ -23,33 +23,33 @@ export default async function sitemap() {
   });
 
   const staticLinks = [
-    { url: "https://edu123.in", lastModified: "2023-12-21T11:58:24.000Z" },
+    { url: "https://edulister.com", lastModified: "2023-12-21T11:58:24.000Z" },
     {
-      url: "https://edu123.in/about",
+      url: "https://edulister.com/about",
       lastModified: "2023-12-21T11:58:24.000Z",
     },
     {
-      url: "https://edu123.in/compare-schools",
+      url: "https://edulister.com/compare-schools",
       lastModified: "2023-12-21T11:58:24.000Z",
     },
     {
-      url: "https://edu123.in/privacy-policy",
+      url: "https://edulister.com/privacy-policy",
       lastModified: "2023-12-21T11:58:24.000Z",
     },
     {
-      url: "https://edu123.in/contact",
+      url: "https://edulister.com/contact",
       lastModified: "2023-12-21T11:58:24.000Z",
     },
     {
-      url: "https://edu123.in/terms-and-condition",
+      url: "https://edulister.com/terms-and-condition",
       lastModified: "2023-12-21T11:58:24.000Z",
     },
     {
-      url: "https://edu123.in/author",
+      url: "https://edulister.com/author",
       lastModified: "2023-12-21T11:58:24.000Z",
     },
     {
-      url: "https://edu123.in/school/sitemap.xml",
+      url: "https://edulister.com/school/sitemap.xml",
       lastModified: "2023-12-21T11:58:24.000Z",
     },
   ];
