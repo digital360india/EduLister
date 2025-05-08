@@ -1,5 +1,5 @@
 "use client";
-import { base, baseRe } from "@/app/api/airtable";
+import { base } from "@/app/api/airtable";
 import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
@@ -63,7 +63,18 @@ const Formedulister = () => {
         formData
       );
 
-      if (emailResponse.status === 200) {
+      const lmsResponse = await axios.post(
+        "https://digitalleadmanagement.vercel.app/api/add-lead",
+        {
+          name: formData.name,
+          phoneNumber: formData.phone,
+          url: window.location.href,
+          source: "Edulister - Confuse to choose the Best School",
+          date: new Date().toISOString(),
+        }
+      );
+
+      if (emailResponse.status === 200 && lmsResponse.status === 200) {
         toast.success("Form Submitted Successfully!");
         setFormData({
           name: "",

@@ -7,7 +7,6 @@ import { base } from "@/app/api/airtable";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-
 export default function ConsultationPopup({ setClose }) {
   const [loading, setLoading] = useState(false);
 
@@ -16,8 +15,7 @@ export default function ConsultationPopup({ setClose }) {
     email: "",
     phone: "",
     classes: "",
-    source :"EduLister - www.edulister.com",
-
+    source: "EduLister - www.edulister.com",
   });
 
   const handleChange = (e) => {
@@ -67,8 +65,18 @@ export default function ConsultationPopup({ setClose }) {
         "https://goedunodemailer.onrender.com/send-email",
         formData
       );
+      const lmsResponse = await axios.post(
+        "https://digitalleadmanagement.vercel.app/api/add-lead",
+        {
+          name: formData.name,
+          phoneNumber: formData.phone,
+          url: window.location.href,
+          source: "Edulister - Get Consultation Popup",
+          date: new Date().toISOString(),
+        }
+      );
 
-      if (emailResponse.status === 200) {
+      if (emailResponse.status === 200 && lmsResponse.status === 200) {
         toast.success("Form Submitted Successfully!");
         setFormData({
           name: "",
@@ -132,7 +140,7 @@ export default function ConsultationPopup({ setClose }) {
               onChange={handleChange}
               className="p-2 border border-[#D9D9D9] w-full h-[39px] placeholder:text-[#898989] sm:border sm:rounded  sm:border-[#D9D9D9]"
             />
-           <div className="flex">
+            <div className="flex">
               <PhoneInput
                 className="w-full border-[#D9D9D9] border rounded md:border md:rounded"
                 country={"in"}
@@ -177,8 +185,6 @@ export default function ConsultationPopup({ setClose }) {
               </select>
             </div>
             <div className="md:pt-4 pt-8 cursor-pointer">
-
-
               <button
                 type="submit"
                 disabled={loading}
