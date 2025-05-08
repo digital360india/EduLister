@@ -72,6 +72,8 @@ export default function ConsultationPopup({ setClose }) {
           phoneNumber: formData.phone,
           url: window.location.href,
           source: "Edulister - Get Consultation Popup",
+          email: formData.email,
+          currentClass: formData.classes,
           date: new Date().toISOString(),
         }
       );
