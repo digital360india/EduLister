@@ -1,4 +1,4 @@
-https://www.edulister.comUser-agent:*
+User-agent:*
 Allow: /
 
-Sitemap: https://www.edu123.in/sitemap.xml
+Sitemap: https://www.edulister.com/sitemap.xml

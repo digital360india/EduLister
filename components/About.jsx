@@ -45,11 +45,11 @@ export const About = () => {
       </div>
       <div>
         <p className=" text-[12px] -mt-4 -mb-4 sm:mt-0 sm:text-[16px]">
-          Edu123 is your go-to destination for discovering top-notch boarding
+          Edulister is your go-to destination for discovering top-notch boarding
           schools across India. Our comprehensive portal simplifies the school
           search process, providing detailed listings and transparent
           information. Whether you seek academic excellence, state-of-the-art
-          facilities, or a nurturing environment, Edu123 ensures you make
+          facilities, or a nurturing environment, Edulister ensures you make
           informed choices for your child's future. Trust us to guide you in
           navigating the vast landscape of boarding schools nationwide.
         </p>
