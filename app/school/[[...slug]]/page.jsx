@@ -1,4 +1,4 @@
-// import SchoolDetails from "@/components/SchoolDetails";
+https://www.edulister.com// import SchoolDetails from "@/components/SchoolDetails";
 // import { base, baseRe } from "@/app/api/airtable";
 
 // let id;
