@@ -16,7 +16,13 @@ export async function generateMetadata() {
     title: "Instantly Find the Best Boarding Schools | Edulister",
     description:
       "Instantly explore top boarding schools that fit your needs. Compare options, view facilities, and make the best choice for your child's future in seconds!",
-    icons: [{ rel: "icon", url: "/edulisterlogo.png" }],
+   
+   
+    verification: {
+      google: "lprEFJtrZfjjBp3ck8C6oRtWc-FZOeIyoYo6veJI7Yg",
+    },
+
+      icons: [{ rel: "icon", url: "/edulisterlogo.png" }],
     other: [
       {
         name: "viewport",
