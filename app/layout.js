@@ -8,6 +8,7 @@ import { ToastContainer } from "react-toastify";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import Popup from "@/components/Popup";
+import Script from "next/script";
 // import Head from "next/head";
 // import Popup from "@/components/Ppoup";
 
@@ -65,7 +66,23 @@ export async function generateMetadata() {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <Head></Head> */}
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-7ZTENWT3SL"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-7ZTENWT3SL');
+          `}
+        </Script>
+      </head>
       <body className="overflow-x-hidden">
         <ToastContainer />
         <Authprovider>
