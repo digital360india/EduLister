@@ -58,10 +58,10 @@ const Formedulister = () => {
         }
       );
 
-      const emailResponse = await axios.post(
-        "https://goedunodemailer.onrender.com/send-email",
-        formData
-      );
+      // const emailResponse = await axios.post(
+      //   "https://goedunodemailer.onrender.com/send-email",
+      //   formData
+      // );
 
       const lmsResponse = await axios.post(
         "https://digitalleadmanagement.vercel.app/api/add-lead",
@@ -74,7 +74,7 @@ const Formedulister = () => {
         }
       );
 
-      if (emailResponse.status === 200 && lmsResponse.status === 200) {
+      if (lmsResponse.status === 200) {
         toast.success("Form Submitted Successfully!");
         setFormData({
           name: "",
