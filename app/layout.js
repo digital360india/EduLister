@@ -83,12 +83,12 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body className="overflow-x-hidden">
+      <body >
         <ToastContainer />
         <Authprovider>
           <Navbar />
-          <Popup/>
-          {children}
+          {/* <Popup/> */}
+          <div className="overflow-x-hidden">{children}</div>
           <Footer />
           <FooterLinks />
         </Authprovider>

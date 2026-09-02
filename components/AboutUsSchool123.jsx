@@ -1,222 +1,234 @@
-"use client";
-import React from "react";
-// import MascotAnimation from "./MascotAnimation";
-import Image from "next/image";
+import Link from "next/link";
+import { Compass, GitCompareArrows, Bookmark, Sparkles, CheckCircle2 } from "lucide-react";
 
-const AboutUsSchool123 = () => {
-  return (
-    <>
-      {/* <div className="absolute">
-        <MascotAnimation />
-      </div> */}
-
-      <div className="bg-background-dark">
-        <h1
-          className="text-[#FFFFFF] text-[50px] md:text-[200px] text-center pt-40 md:pt-0 md:mt-20"
-          style={{ fontFamily: "League Gothic" }}
-        >
-          About Us
-        </h1>
-
-        {/* <Image
-              src="/abouteduline.svg"
-              width={1000}
-              height={1000}
-              alt="line"
-              className="w-[350px] h-[250px] absolute bottom-40 left-20 hidden md:block"
-            /> */}
-        <div className="flex justify-center items-center mb-20">
-          <Image
-            src="/GoEdu (4) 3.svg"
-            alt="about"
-            width={1000}
-            height={1000}
-            className="w-[120px] h-[120px] md:w-[200px] md:h-[200px] bg-white p-1 rounded-full "
-          />
-        </div>
-
-        <h2 className="text-center text-white text-[30px] mb-5">
-          Let&apos;s Begin !!
-        </h2>
-        <div className="flex justify-center items-center pb-10">
-          <Image
-            src="/downarrowedu.svg"
-            width={1000}
-            height={1000}
-            alt="down"
-            className="w-[40px] h-[40px] cursor-pointer"
-            onClick={() => {
-              document.getElementById("scroll-target").scrollIntoView({
-                behavior: "smooth",
-              });
-            }}
-          />
-        </div>
-      </div>
-
-      <div
-        id="scroll-target"
-        className="sm:mt-12 text-[#323232] md:px-[100px]  pb-12 md:pb-0"
-      >
-        <div className="bg-[#F8F8F8] px-7 space-y-10">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-10">
-            <div className="flex-1 order-2 md:order-none text-center md:text-left">
-              <p className="text-[16px] sm:text-[40px] font-semibold text-center md:text-left hidden md:block">
-                WHO WE ARE
-              </p>
-              <p className="text-[12px] sm:text-[20px] text-justify mt-4 ">
-                Edu Lister is a trailblazing online platform that connects
-                families and students with the best boarding schools across
-                India. We provide a one-stop resource featuring detailed school
-                profiles, helping parents and students make well-informed
-                decisions quickly and confidently.
-              </p>
-            </div>
-            <div className="w-[2px] h-52 bg-[#323232] hidden md:block"></div>
-            <div className="flex md:flex-col items-center space-y-2 md:space-y-4 order-1 md:order-none gap-10 md:gap-0">
-              <p className="text-[16px] sm:text-[40px] font-semibold text-center md:text-left md:hidden">
-                About Us
-              </p>
-              <img
-                src="/GoEdu (4) 3.svg"
-                className="w-[100px] h-[130px] md:h-[160px] md:w-[150px]"
-                alt="Mission logo"
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between items-center  md:space-x-10">
-            <div className="flex items-center justify-center order-1 md:order-none gap-5 md:gap-0">
-              <img
-                src="./Untitled design (12).png"
-                className="w-[100px] h-[110px] md:h-[130px] md:w-[200px]"
-                alt="Passion logo"
-              />
-              <p className="text-[16px] sm:text-[40px] font-semibold md:hidden">
-                OUR PASSION FOR EDUCATION
-              </p>
-            </div>
-            <div className="w-[2px] h-52 bg-[#323232] hidden md:block"></div>
-            <div className="flex-1 text-center md:text-left order-2 md:order-none">
-              <p className="text-[16px] sm:text-[40px] font-semibold pb-4 hidden md:block">
-                Guided by Educational Excellence
-              </p>
-              <p className="text-[12px] sm:text-[20px] text-justify">
-                At Edu Lister, we are driven by a deep passion for quality
-                education and the belief in the transformative potential of
-                boarding schools. Our dedicated team works tirelessly to ensure
-                our platform highlights the diversity and excellence of boarding
-                education in India, catering to a wide range of needs and
-                preferences.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row md:justify-between items-center  md:space-x-10">
-            <div className="flex-1 order-2 md:order-none text-center md:text-left">
-              <p className="text-[16px] sm:text-[40px] font-semibold text-center pb-4 md:text-left hidden md:block">
-                HONEST AND RELIABLE INFORMATION
-              </p>
-              <p className="text-[12px] sm:text-[20px] text-justify">
-                We are committed to providing accurate and transparent
-                information. Edu Lister ensures parents and students receive
-                up-to-date, reliable details about each boarding school. Our
-                platform is designed to present an unbiased view, helping
-                families find the best fit for their educational goals.
-              </p>
-            </div>
-            <div className="w-[2px] h-52 bg-[#323232] hidden md:block"></div>
-            <div className="flex md:flex-col items-center order-1 md:order-none gap-10 md:gap-0">
-              <p className="text-[16px] sm:text-[40px] font-semibold text-center md:text-left md:hidden">
-                Making School Selection Easy
-              </p>
-              <img
-                src="./ourmission.svg"
-                className="w-[100px] h-[100px] md:h-[160px] md:w-[150px]"
-                alt="Mission logo"
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-10">
-            <div className="flex items-center justify-center order-1 md:order-none gap-8 md:gap-0">
-              <img
-                src="/Untitled design (10).png"
-                className="w-[100px] h-[100px] md:h-[140px] md:w-[150px]"
-                alt="Consultation logo"
-              />
-              <p className="text-[16px] sm:text-[40px] font-semibold  md:hidden">
-                OUR GOAL
-              </p>
-            </div>
-            <div className="w-[2px] h-52 bg-[#323232] hidden md:block"></div>
-            <div className="flex-1 text-center md:text-left order-2 md:order-none">
-              <p className="text-[16px] sm:text-[40px] font-semibold pb-4 hidden md:block">
-                Our Goal
-              </p>
-              <p className="text-[12px] sm:text-[20px] text-justify">
-                Our goal at Edu Lister is to simplify the search for the perfect
-                boarding school. We strive to be India&apos;s leading resource for
-                boarding education, offering families an easy-to-navigate
-                platform that saves both time and effort. We also give schools a
-                space to showcase their unique features to a national audience.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between items-center md:space-x-10">
-            <div className="flex-1 order-2 md:order-none text-center md:text-left">
-              <p className="text-[16px] sm:text-[40px] font-semibold text-center md:text-left pb-4 hidden md:block">
-                BRINGING FAMILIES AND SCHOOLS TOGETHER
-              </p>
-              <p className="text-[12px] sm:text-[20px] text-justify">
-                Edu Lister connects India&apos;s top boarding schools with families
-                seeking the best educational opportunities for their children.
-                Schools can reach a wider audience, while parents and students
-                can access a curated selection of schools that meet our rigorous
-                standards.
-              </p>
-            </div>
-            <div className="w-[2px] h-52 bg-[#323232] hidden md:block"></div>
-            <div className="flex md:flex-col items-center order-1 md:order-none gap-10 md:gap-0">
-              <p className="text-[16px] sm:text-[40px] font-semibold text-center md:text-left md:hidden">
-                Your Path to Informezzd Choices
-              </p>
-              <img
-                src="/Untitled design (11).png"
-                className="w-[100px] h-[130px] md:h-[160px] md:w-[150px]"
-                alt="Join us logo"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-10">
-            <div className="flex items-center justify-center order-1 md:order-none gap-8 md:gap-0">
-              <img
-                src="/consult.svg"
-                className="w-[100px] h-[100px] md:h-[160px] md:w-[150px]"
-                alt="Consultation logo"
-              />
-              <p className="text-[16px] sm:text-[40px] font-semibold  md:hidden">
-                OUR GOAL
-              </p>
-            </div>
-            <div className="w-[2px] h-52 bg-[#323232] hidden md:block"></div>
-            <div className="flex-1 text-center md:text-left order-2 md:order-none">
-              <p className="text-[16px] sm:text-[40px] font-semibold pb-4 hidden md:block">
-                GUIDANCE AND SUPPORT
-              </p>
-              <p className="text-[12px] sm:text-[20px] text-justify">
-                We offer personalized guidance to families, helping them choose
-                the right boarding school. Our team of experts is always
-                available to answer questions and provide support, ensuring
-                every family makes an informed choice.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+export const metadata = {
+  title: "About EduLister | Boarding School Discovery & Comparison",
+  description:
+    "Learn how EduLister helps parents discover, compare and shortlist the best boarding schools across India by curriculum, fees, facilities and reviews.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
-export default AboutUsSchool123;
+const searchBy = [
+  "Location",
+  "Curriculum",
+  "School type",
+  "Boarding / Day school",
+  "Boys / Girls / Co-ed",
+  "Fees",
+  "Grades offered",
+  "Facilities",
+  "Academic offerings",
+  "Reviews",
+  "Admission information",
+];
+
+const howItWorks = [
+  { icon: Compass, title: "Discover", body: "Find schools that match your requirements." },
+  { icon: GitCompareArrows, title: "Compare", body: "Evaluate schools across meaningful parameters." },
+  { icon: Bookmark, title: "Shortlist", body: "Save schools you want to explore further." },
+  { icon: Sparkles, title: "Match", body: "Use your preferences to discover schools that may be a good fit." },
+  { icon: CheckCircle2, title: "Decide", body: "Use the information available to make a more informed decision." },
+];
+
+const revenue = [
+  "School profile services",
+  "Featured listings",
+  "Promotional placements",
+  "School subscriptions",
+  "Qualified enquiries",
+  "Advertising",
+  "Partnerships",
+  "Other clearly identified commercial services",
+];
+
+const schoolServices = [
+  "Claim their profile",
+  "Update information",
+  "Add or manage profile content",
+  "Respond to enquiries",
+  "Improve their visibility through eligible promotional services",
+];
+
+const recommendationInputs = [
+  "Child's grade",
+  "Preferred location",
+  "Budget",
+  "Curriculum",
+  "Boarding preference",
+  "School type",
+  "Gender preference",
+  "Facilities",
+  "Parent priorities",
+];
+
+export default function AboutUsSchool123() {
+  return (
+    <div className="container-page py-12 mt-20 px-6 md:px-8 lg:px-10">
+      <div className="max-w-3xl">
+        <p className="text-xs uppercase tracking-wider text-gold">About EduLister</p>
+        <h1 className="mt-2 font-display text-4xl leading-[1.05] md:text-6xl">
+          Find the right school<br />for your child.
+        </h1>
+        <p className="mt-4 font-display text-xl italic text-gold">Discover. Compare. Choose Better.</p>
+        <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+          EduLister is a school discovery and comparison platform that helps parents explore, evaluate and shortlist
+          schools based on the factors that matter to their family.
+        </p>
+      </div>
+
+      <section className="mt-14 max-w-4xl">
+        <h2 className="font-display text-2xl">Search schools by</h2>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {searchBy.map((s) => (
+            <span key={s} className="rounded-full border border-border bg-card px-4 py-2 text-sm">
+              {s}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-16 max-w-3xl">
+        <h2 className="font-display text-2xl">Our purpose</h2>
+        <p className="mt-4 text-sm leading-relaxed">Choosing a school is a personal decision.</p>
+        <p className="mt-3 text-sm leading-relaxed">
+          EduLister brings relevant school information together so parents can spend less time searching across multiple
+          sources and more time evaluating the options that fit their requirements.
+        </p>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="font-display text-2xl">How EduLister works</h2>
+        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          {howItWorks.map(({ icon: Icon, title, body }) => (
+            <div key={title} className="rounded-2xl border border-border/60 bg-card p-5">
+              <div className="grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground">
+                <Icon size={17} />
+              </div>
+              <h3 className="mt-4 font-display text-lg">{title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-16 max-w-3xl rounded-2xl border border-border bg-secondary/60 p-8">
+        <h2 className="font-display text-2xl">Our philosophy</h2>
+        <p className="mt-4 font-display text-xl leading-snug">
+          The best school is not necessarily the best school for every child.
+        </p>
+        <p className="mt-4 text-sm leading-relaxed">
+          EduLister focuses on helping families find the right fit rather than declaring one universal "best school."
+        </p>
+        <p className="mt-3 text-sm leading-relaxed">
+          Our comparisons and recommendations are intended to support research and decision-making, not replace a parent's
+          own evaluation.
+        </p>
+      </section>
+
+      <section className="mt-16 grid max-w-4xl gap-10 md:grid-cols-2">
+        <div>
+          <h2 className="font-display text-2xl">For schools</h2>
+          <p className="mt-4 text-sm leading-relaxed">
+            EduLister helps schools improve their online discoverability and present relevant information to prospective
+            families. Schools may be able to:
+          </p>
+          <ul className="mt-4 space-y-2 text-sm">
+            {schoolServices.map((s) => (
+              <li key={s} className="flex gap-2">
+                <span className="text-gold">·</span>
+                <span>{s}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-xs text-muted-foreground">
+            All school profile and promotional arrangements are subject to EduLister's verification and commercial
+            policies.
+          </p>
+        </div>
+        <div>
+          <h2 className="font-display text-2xl">How EduLister makes money</h2>
+          <p className="mt-4 text-sm leading-relaxed">Transparent by design. EduLister may generate revenue through:</p>
+          <ul className="mt-4 space-y-2 text-sm">
+            {revenue.map((s) => (
+              <li key={s} className="flex gap-2">
+                <span className="text-gold">·</span>
+                <span>{s}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="mt-16 max-w-3xl">
+        <h2 className="font-display text-2xl">Commercial transparency</h2>
+        <p className="mt-4 text-sm leading-relaxed">
+          A school's presence on EduLister does not automatically mean that EduLister endorses or recommends that school.
+        </p>
+        <p className="mt-3 text-sm leading-relaxed">
+          Where a placement, listing or recommendation is commercially influenced, EduLister will aim to identify the
+          relevant commercial relationship or promotional nature clearly. Paid placement must not be represented as an
+          independent ranking or objective recommendation.
+        </p>
+        <p className="mt-3 text-sm leading-relaxed">
+          School visibility and recommendation scores may be influenced by different factors depending on the feature.
+          Where relevant, EduLister will provide appropriate disclosure.
+        </p>
+      </section>
+
+      <section className="mt-16 max-w-3xl">
+        <h2 className="font-display text-2xl">School recommendations — Find My School</h2>
+        <p className="mt-4 text-sm leading-relaxed">
+          EduLister may offer personalised school recommendations based on information such as:
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {recommendationInputs.map((s) => (
+            <span key={s} className="rounded-full border border-border bg-card px-3.5 py-1.5 text-xs">
+              {s}
+            </span>
+          ))}
+        </div>
+        <p className="mt-5 text-sm leading-relaxed">
+          A recommendation or match score represents an algorithmic suitability estimate based on the information provided
+          and available platform data. It is not a guarantee, a formal ranking, an endorsement, a guarantee of admission,
+          or a statement that one school is objectively better than another.
+        </p>
+        <p className="mt-3 text-sm leading-relaxed">
+          Parents should independently research and verify shortlisted schools.
+        </p>
+      </section>
+
+      <section className="mt-16 max-w-3xl rounded-2xl border border-gold/40 bg-gold/10 p-8">
+        <h2 className="font-display text-2xl">Important</h2>
+        <p className="mt-4 text-sm leading-relaxed">
+          EduLister is an independent school discovery platform unless expressly stated otherwise.
+        </p>
+        <p className="mt-3 text-sm leading-relaxed">
+          School information may be obtained from schools, authorised representatives, public sources, third-party sources
+          and user submissions.
+        </p>
+        <p className="mt-3 text-sm leading-relaxed">
+          Parents should independently verify important information directly with the school before making an admission or
+          financial decision. This includes fees, admission dates, eligibility, vacancies, curriculum, facilities, boarding
+          arrangements, rankings, reviews and other time-sensitive information.
+        </p>
+      </section>
+
+      <div className="mt-16 max-w-3xl rounded-2xl border border-border bg-card p-8">
+        <p className="font-display text-2xl">Ready to start?</p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Explore schools, compare side by side, or talk to us about your shortlist.
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link href="/schools" className="rounded-full bg-primary px-5 py-2.5 text-sm text-primary-foreground">
+            Explore schools →
+          </Link>
+          <Link href="/consultation" className="rounded-full border border-border px-5 py-2.5 text-sm hover:border-primary">
+            Book a consultation
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

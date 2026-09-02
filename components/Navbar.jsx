@@ -11,6 +11,7 @@ import Link from "next/link";
 import "react-modern-drawer/dist/index.css";
 import { Icon } from "@iconify/react";
 import ConsultationPopup from "@/components/ConsultationPopup";
+import { Phone } from "lucide-react";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -19,25 +20,31 @@ const Navbar = () => {
   const [isOpenpopup, setIsOpenpopup] = useState(false);
 
   const navLinks = [
-    { name: "Home", path: "/", icon: "iconamoon:home" },
-    { name: "About", path: "/about", icon: "mdi:about-circle-outline" },
+    { name: "Schools", path: "/", icon: "iconamoon:home" },
     {
-      name: "Compare Schools",
+      name: "Nearby Schools",
       path: "/compare-schools",
       icon: "fluent-mdl2:compare-uneven",
     },
-    { name: "Contact", path: "/contact", icon: "tabler:phone" },
+    {
+      name: "Cities",
+      path: "/compare-schools",
+      icon: "fluent-mdl2:compare-uneven",
+    },
+
     {
       name: "Blogs",
       path: "",
       external: true,
       icon: "mdi:blog",
     },
+    { name: "About", path: "/about", icon: "mdi:about-circle-outline" },
+    { name: "Contact", path: "/contact", icon: "tabler:phone" },
   ];
 
   const socialLinks = [
     {
-      href: "https://www.facebook.com/share/192Nh9gFbN/ ",
+      href: "https://www.facebook.com/share/192Nh9gFbN/",
       icon: <BsFacebook />,
       key: "facebook",
     },
@@ -46,7 +53,6 @@ const Navbar = () => {
       icon: <BsInstagram />,
       key: "instagram",
     },
-    
   ];
 
   // useEffect(() => {
@@ -77,8 +83,8 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="hidden md:block w-full absolute top-0 z-40 bg-white border border-[#9B1750]">
-        <div className="justify-between  items-center h-[80px] flex px-6">
+      <nav className="hidden md:block fixed w-full top-0 z-40 bg-white border-b border-gray-200">
+        <div className="justify-between items-center h-[80px] flex px-6">
           <div className="flex items-center justify-between py-7 ">
             <Link href={"/"}>
               <img
@@ -115,20 +121,28 @@ const Navbar = () => {
                   </li>
                 );
               })}
-              <li>
-                <button
-                  onClick={toggleBookingPopup}
-                  className="bg-background-dark text-white rounded-lg py-2 px-4"
-                >
-                  Get Consultation
-                </button>
-              </li>
             </ul>
+          </div>
+          <div className="hidden items-center gap-3 md:flex">
+            <a
+              href="tel:+919760548360"
+              className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-primary"
+              aria-label="Call EduLister at +91 97605 48360"
+            >
+              <Phone size={16} className="text-primary" />
+              +91 97605 48360
+            </a>
+            <Link
+              href="/consultation"
+              className="bg-background-dark text-white rounded-lg py-2 px-4"
+            >
+              Get Consultation
+            </Link>
           </div>
         </div>
       </nav>
 
-      <nav className="block md:hidden w-full absolute top-0 z-40 bg-white">
+      <nav className="block md:hidden w-full  top-0 z-40 bg-white">
         <div className="justify-between px-4 mx-auto ">
           <div className="flex items-center justify-between py-3 ">
             <Link href={"/"}>
