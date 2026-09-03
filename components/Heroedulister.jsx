@@ -26,7 +26,7 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/60" />
       </div>
-      <div className="container-page relative grid gap-12 py-20 md:grid-cols-[1.15fr_0.85fr] md:py-28">
+      <div className="container-page relative grid gap-10 py-20 md:grid-cols-[1.15fr_0.85fr] md:py-28">
         <div className="animate-slideIn">
           <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-3 py-1 text-xs text-gold">
             <ShieldCheck size={12} />
@@ -67,7 +67,7 @@ export default function Hero() {
         </div>
 
         <div className="relative hidden md:block">
-          <div className="relative aspect-[3/2] overflow-hidden rounded-3xl">
+          <div className="relative aspect-[3/2] rounded-3xl">
             <Image
               src={heroImg}
               alt="Indian students walking together on a heritage boarding school campus at golden hour"
@@ -76,8 +76,8 @@ export default function Hero() {
               height={1080}
             />
           </div>
-          <div className="absolute -bottom-5 -left-6 rounded-2xl border border-border bg-card p-4 text-foreground shadow-xl">
-            <div className="flex items-center gap-3">
+          <div className="absolute -bottom-2 -left-6 rounded-2xl border border-border bg-card p-4 text-foreground shadow-xl">
+            <div className="flex items-center gap-4">
               <div className="grid h-10 w-10 place-items-center rounded-full bg-gold text-gold-foreground">
                 <Star size={18} />
               </div>

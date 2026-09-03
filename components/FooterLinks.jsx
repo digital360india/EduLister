@@ -1,114 +1,58 @@
 import Link from "next/link";
-import React from "react";
 
-export const FooterLinks = () => {
+const cityColumns = [
+  ["Dehradun", "Mussoorie", "Shimla", "Nainital"],
+  ["Bangalore", "India", "Pune", "Panchgani"],
+  ["Hyderabad", "Jaipur"],
+];
+
+const citySlug = (city) => city.toLowerCase().replace(/\s+/g, "-");
+
+export function FooterLinks() {
   return (
-    <div className="w-[98.9vw] text-[14px] text-[#323232] bg-[#F3F3F3] pb-2 h-fit">
-      <div className=" px-8 sm:px-10 ">
-        <div className="md:text-center text-[20px] md:text-[24px] underline text-[#323232] font-semibold pb-3">
-          <p>Explore top Cities</p>
+    <div className="border-t border-border/60 bg-secondary text-foreground px-6 md:px-12 lg:px-20">
+      <div className="container-page py-12">
+        <h3 className="text-center font-display text-2xl md:text-3xl underline underline-offset-8 decoration-gold decoration-2">
+          Explore top Cities
+        </h3>
+
+        <div className="mt-8 flex flex-col gap-6 text-sm sm:flex-row sm:justify-between pb-4">
+          {cityColumns.map((column, i) => (
+            <div key={i} className="flex flex-col gap-2 sm:items-center">
+              {column.map((city) => (
+                <Link
+                  key={city}
+                  href={`https://www.edulister.com/category/boarding-schools-in-${citySlug(
+                    city,
+                  )}`}
+                  className="hover:text-primary"
+                >
+                  Boarding Schools in {city}
+                </Link>
+              ))}
+            </div>
+          ))}
         </div>
-        <div className=" flex flex-col sm:flex-row gap-2 sm:gap-0 text-[12px] text-[#323232] pb-4   md:p-6 ">
-          <div className="flex  flex-col  sm:items-center lg:w-[25vw]       ">
-             <div className="flex flex-col">
-              <Link
-                href={
-                  "https://www.edulister.com/category/boarding-schools-in-dehradun"
-                }
-              >
-                Boarding Schools in Dehradun
-              </Link>
-              <Link
-                href={
-                  "https://www.edulister.com/category/boarding-schools-in-mussoorie"
-                }
-              >
-                Boarding Schools in Mussoorie
-              </Link>
-              <Link
-                href={
-                  "https://www.edulister.com/category/boarding-schools-in-shimla"
-                }
-              >
-                Boarding Schools in Shimla
-              </Link>
-            
-            </div> 
-          </div>
-          <div className="flex  flex-col  sm:items-center lg:w-[25vw]       ">
-            <div className="flex flex-col">
-             
-              <Link
-                href={
-                  "https://www.edulister.com/category/boarding-schools-in-bangalore"
-                }
-              >
-                Boarding Schools in Bangalore
-              </Link>
-              <Link
-                href={
-                  "https://www.edulister.com/category/boarding-schools-in-india"
-                }
-              >
-                Boarding Schools in India
-              </Link>
-            </div>
-          </div> 
-
-        
-       
-
-           <div className=" flex sm:justify-center sm:mt-0  lg:w-[27vw]">
-            <div className="flex flex-col">
-              <Link
-                href={
-                  "https://www.edulister.com/category/boarding-schools-in-hyderabad"
-                }
-              >
-                Boarding Schools in Hyderabad
-              </Link>
-              <Link
-                href={"https://www.edulister.com/category/boarding-schools-in-pune"}
-              >
-                Boarding Schools in Pune
-              </Link>
-              <Link
-                href={
-                  "https://www.edulister.com/category/boarding-schools-in-jaipur"
-                }
-              >
-                Boarding Schools in Jaipur
-              </Link>
-            
-            </div>
-          </div>
-          <div className=" flex sm:justify-center sm:mt-0  lg:w-[27vw]">
-            <div className="flex flex-col">
-              
-              <Link
-                href={
-                  "https://www.edulister.com/category/boarding-schools-in-nainital"
-                }
-              >
-                Boarding Schools in Nainital
-              </Link>
-              <Link
-                href={
-                  "https://www.edulister.com/category/boarding-schools-in-panchgani"
-                }
-              >
-                Boarding Schools in Panchgani
-              </Link>
-            </div>
+        <div className="border-t border-border/60">
+          <div className="container-page py-8">
+            <p className="mx-auto max-w-4xl text-center text-xs leading-relaxed text-muted-foreground">
+              EduLister is a school discovery and comparison platform.
+              Information on this website may change and should be independently
+              verified with the relevant school. Listings, rankings, ratings and
+              recommendations do not constitute a guarantee, endorsement or
+              assurance of admission. Commercial relationships, where
+              applicable, do not necessarily indicate endorsement.
+            </p>
           </div>
         </div>
 
-        <div className="text-center  pb-4">
-          <p>
-            <a href="mailto:edulisterindia@gmail.com">edulisterindia@gmail.com</a>
-          </p>
+        <div className="border-t border-border/60">
+          <div className="container-page flex flex-col items-center justify-between gap-2 py-6 text-xs text-muted-foreground md:flex-row">
+            <p>© {new Date().getFullYear()} Edulister. All rights reserved.</p>
+            <p>Discover. Compare. Choose Better.</p>
+          </div>
         </div>
       </div>
     </div>
   );
-};
+}

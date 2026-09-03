@@ -1,20 +1,15 @@
 "use client";
 import React, { useState } from "react";
 import Drawer from "react-modern-drawer";
-import {
-  BsTelephone,
-  BsWhatsapp,
-  BsFacebook,
-  BsInstagram,
-} from "react-icons/bs";
+import { BsFacebook, BsInstagram } from "react-icons/bs";
 import Link from "next/link";
 import "react-modern-drawer/dist/index.css";
 import { Icon } from "@iconify/react";
 import ConsultationPopup from "@/components/ConsultationPopup";
-import { Phone } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
+import { ThemeToggle } from "./theme-toggle/ThemeToggle";
 
 const Navbar = () => {
-  const [navbar, setNavbar] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeButton, setActiveButton] = useState("");
   const [isOpenpopup, setIsOpenpopup] = useState(false);
@@ -31,7 +26,6 @@ const Navbar = () => {
       path: "/compare-schools",
       icon: "fluent-mdl2:compare-uneven",
     },
-
     {
       name: "Blogs",
       path: "",
@@ -55,10 +49,6 @@ const Navbar = () => {
     },
   ];
 
-  // useEffect(() => {
-  //   console.log("isOpenpopup state changed:", isOpenpopup);
-  // }, [isOpenpopup]);
-
   const toggleDrawer = () => {
     document.body.style.overflow = isOpen ? "auto" : "hidden";
     setIsOpen((prevState) => !prevState);
@@ -66,10 +56,6 @@ const Navbar = () => {
 
   const handleButtonClick = (button) => {
     setActiveButton(button);
-  };
-
-  const toggleBookingPopup = () => {
-    setIsOpenpopup(true);
   };
 
   const toggleBookingPopupSmall = () => {
@@ -83,46 +69,43 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="hidden md:block fixed w-full top-0 z-40 bg-white border-b border-gray-200">
-        <div className="justify-between items-center h-[80px] flex px-6">
-          <div className="flex items-center justify-between py-7 ">
-            <Link href={"/"}>
-              <img
-                className="w-14  md:mx-24  lg:w-[78px]"
-                src="/GoEdu (4) 3.svg"
-                alt="Logo"
-                width={88}
-                height={56}
-              />
-            </Link>
-          </div>
-          <div>
-            <ul className="font-medium items-center w-full opacity-90 text-center justify-center flex space-x-6 py-10">
-              {navLinks.map((link) => {
-                const hideOnMd =
-                  link.name === "Compare Schools" || link.name === "Blogs";
+      {/* Desktop */}
+      <nav className="hidden md:block fixed top-0 z-40 border-b border-border/60 bg-background w-full">
+        <div className="container-page flex items-center justify-between h-[80px] px-6">
+          <Link href={"/"} className="flex items-center gap-2">
+            <img
+              className="w-14  md:mx-24  lg:w-[78px]"
+              src="/GoEdu (4) 3.svg"
+              alt="EduLister"
+              width={88}
+              height={56}
+            />
+          </Link>
 
-                return (
-                  <li
-                    key={link.name}
-                    className={`text-background-dark text-[1rem] py-2 px-2 ${
+          <ul className="hidden items-center gap-8 md:flex">
+            {navLinks.map((link) => {
+              const hideOnMd =
+                link.name === "Nearby Schools" || link.name === "Blogs";
+
+              return (
+                <li key={link.name} className={hideOnMd ? "hidden lg:block" : ""}>
+                  <Link
+                    href={link.path}
+                    onClick={() => handleButtonClick(link.name.toLowerCase())}
+                    target={link.external ? "_blank" : "_self"}
+                    className={`text-sm transition-colors hover:text-primary ${
                       activeButton === link.name.toLowerCase()
-                        ? "text-[#FFFFFF] font-semibold rounded-lg"
-                        : ""
-                    } ${hideOnMd ? "hidden lg:block" : ""}`}
+                        ? "font-medium text-primary"
+                        : "text-muted-foreground"
+                    }`}
                   >
-                    <Link
-                      href={link.path}
-                      onClick={() => handleButtonClick(link.name.toLowerCase())}
-                      target={link.external ? "_blank" : "_self"}
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+                    {link.name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+
           <div className="hidden items-center gap-3 md:flex">
             <a
               href="tel:+919760548360"
@@ -132,70 +115,46 @@ const Navbar = () => {
               <Phone size={16} className="text-primary" />
               +91 97605 48360
             </a>
+            <ThemeToggle />
             <Link
               href="/consultation"
-              className="bg-background-dark text-white rounded-lg py-2 px-4"
+              className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             >
-              Get Consultation
+              Free consultation
             </Link>
           </div>
         </div>
       </nav>
 
-      <nav className="block md:hidden w-full  top-0 z-40 bg-white">
-        <div className="justify-between px-4 mx-auto ">
-          <div className="flex items-center justify-between py-3 ">
-            <Link href={"/"}>
-              <img
-                className="w-14 h-14 mx-2 lg:w-22"
-                src="/GoEdu (4) 3.svg"
-                alt="Logo"
-                width={1000}
-                height={1000}
-              />
-            </Link>
-            <div className="flex gap-5 text-[#02618f]">
-              {/* <Link href="whatsapp://send?abid=+9557695360">
-                <Icon icon="logos:whatsapp-icon" className="inline w-7 h-7" />
-              </Link>
-              <Link href="tel:+9557695360">
-                <BsTelephone className="inline w-6 h-6" />
-              </Link> */}
-              <button
-                className="text-gray-700 rounded-md outline-none focus:border-gray-900 focus:border"
-                onClick={toggleDrawer}
-              >
-                {navbar ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                )}
-              </button>
-            </div>
+      {/* Mobile top bar */}
+      <nav className="block md:hidden sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur">
+        <div className="container-page flex h-16 items-center justify-between">
+          <Link href={"/"}>
+            <img
+              className="h-10 w-auto"
+              src="/GoEdu (4) 3.svg"
+              alt="EduLister"
+              width={1000}
+              height={1000}
+            />
+          </Link>
+
+          <div className="flex items-center gap-2">
+            <a
+              href="tel:+919760548360"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-md text-foreground"
+              aria-label="Call EduLister"
+            >
+              <Phone size={18} className="text-primary" />
+            </a>
+            <ThemeToggle />
+            <button
+              className="inline-flex h-9 w-9 items-center justify-center rounded-md text-foreground"
+              onClick={toggleDrawer}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
           </div>
         </div>
       </nav>
@@ -207,34 +166,32 @@ const Navbar = () => {
           direction="right"
           open={isOpen}
           onClose={toggleDrawer}
-          style={{
-            backgroundColor: "#FFFFFF",
-            padding: "32px",
-            width: "300px",
-          }}
-          className="text-background-light text-[14px] md:hidden"
+          className="!bg-background text-foreground md:hidden"
+          style={{ padding: "32px", width: "300px" }}
         >
           <div className="flex justify-between">
             <Link href={"/"}>
               <img
-                className="w-[70px] h-[60px]"
+                className="h-[60px] w-[70px]"
                 src="GoEdu (4) 3.svg"
                 alt="Logo"
               />
             </Link>
             <Icon
               icon="charm:cross"
-              className="w-10 h-14  cursor-pointer"
+              className="h-14 w-10 cursor-pointer text-foreground"
               onClick={toggleDrawer}
             />
           </div>
-          <div className="bg-background-light w-60 h-[1px] mt-5"></div>
-          <ul className="flex flex-col  space-y-9 mt-8">
+
+          <div className="mt-5 h-[1px] w-60 bg-border/60" />
+
+          <ul className="mt-8 flex flex-col space-y-9">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link
                   href={link.path}
-                  className="text-xl"
+                  className="text-xl text-foreground/80 transition-colors hover:text-primary"
                   onClick={() => {
                     handleButtonClick(link.name.toLowerCase());
                     toggleDrawer();
@@ -248,16 +205,19 @@ const Navbar = () => {
             <li>
               <button
                 onClick={toggleBookingPopupSmall}
-                className="bg-background-dark text-white rounded-lg py-3 px-5 text-[1rem] font-semibold"
+                className="rounded-full bg-primary px-5 py-3 text-[1rem] font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
               >
-                Get Consultation
+                Free consultation
               </button>
             </li>
           </ul>
-          <div className="flex justify-center gap-4 mt-8">
+
+          <div className="mt-8 flex justify-center gap-4">
             {socialLinks.map(({ href, icon, key }) => (
               <Link href={href} target="_blank" key={key}>
-                <div className="text-white">{icon}</div>
+                <div className="text-foreground transition-colors hover:text-primary">
+                  {icon}
+                </div>
               </Link>
             ))}
           </div>

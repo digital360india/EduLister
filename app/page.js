@@ -8,6 +8,8 @@ import Aboutedulister from "@/components/Aboutedulister";
 import Testimonailedulister from "@/components/Testimonailedulister";
 import Mapedulister from "@/components/Mapedulister";
 import MobileAnimation from "@/components/MobileAnimation";
+import { HowWeRecommend } from "@/components/HowWeRecommend";
+import { HomeInquiryForm } from "@/components/HomeInquiryForm";
 
 export async function generateMetadata() {
   return {
@@ -58,14 +60,15 @@ export default function Home() {
   return (
     <div>
       <Heroedulister />
-      <Formedulister />
+      {/* <Formedulister /> */}
       <Mapedulister />
-      <WhyChooseUsedulister />
+      <HowWeRecommend />
       <div className="xl:hidden">
         <MobileAnimation />
       </div>
-      <Aboutedulister />
+      {/* <Aboutedulister /> */}
       <Testimonailedulister />
+      <HomeInquiryForm />
     </div>
   );
 }
