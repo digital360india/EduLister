@@ -15,15 +15,15 @@ const Navbar = () => {
   const [isOpenpopup, setIsOpenpopup] = useState(false);
 
   const navLinks = [
-    { name: "Schools", path: "/", icon: "iconamoon:home" },
+    { name: "Schools", path: "/schools", icon: "iconamoon:home" },
     {
       name: "Nearby Schools",
-      path: "/compare-schools",
+      path: "/near-me",
       icon: "fluent-mdl2:compare-uneven",
     },
     {
       name: "Cities",
-      path: "/compare-schools",
+      path: "/cities",
       icon: "fluent-mdl2:compare-uneven",
     },
     {
@@ -127,15 +127,15 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile top bar */}
-      <nav className="block md:hidden sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur">
-        <div className="container-page flex h-16 items-center justify-between">
+      <nav className="block md:hidden fixed top-0 z-40 border-b border-border/60 bg-background w-full h-[80px] px-6">
+        <div className="container-page flex h-20 items-center justify-between">
           <Link href={"/"}>
             <img
               className="h-10 w-auto"
               src="/GoEdu (4) 3.svg"
               alt="EduLister"
-              width={1000}
-              height={1000}
+              width={85}
+              height={56}
             />
           </Link>
 

@@ -63,9 +63,9 @@ export default function Home() {
       {/* <Formedulister /> */}
       <Mapedulister />
       <HowWeRecommend />
-      <div className="xl:hidden">
+      {/* <div className="xl:hidden">
         <MobileAnimation />
-      </div>
+      </div> */}
       {/* <Aboutedulister /> */}
       <Testimonailedulister />
       <HomeInquiryForm />

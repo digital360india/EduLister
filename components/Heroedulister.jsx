@@ -17,7 +17,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative bg-primary text-primary-foreground px-6 md:px-8 lg:px-10 mt-20 h-[700px]">
+    <section className="relative bg-primary text-primary-foreground px-6 md:px-8 lg:px-10 mt-20 h-[800px] md:h-[700px]">
       <div className="absolute inset-0 -z-0 opacity-20">
         <img
           src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1800"

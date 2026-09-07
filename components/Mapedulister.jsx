@@ -9,57 +9,67 @@ const Mapedulister = () => {
   const [showContent, setShowContent] = useState(false);
 
   const cities = [
-    {
-      name: "india",
-      bannerSrc: "/indiaschool1.svg",
-      bottomSrc: "/locationbottom.svg",
-    },
-    {
-      name: "mussoorie",
-      bannerSrc: "/mussorie1.svg",
-      bottomSrc: "/locationbottom.svg",
-    },
-    {
-      name: "dehradun",
-      bannerSrc: "/dehradun1.svg",
-      bottomSrc: "/locationbottom.svg",
-    },
-    {
-      name: "bangalore",
-      bannerSrc: "/banglore1.svg",
-      bottomSrc: "/locationbottom.svg",
-    },
-    {
-      name: "shimla",
-      bannerSrc: "/shimla1.svg",
-      bottomSrc: "/locationbottom.svg",
-    },
-    {
-      name: "hyderabad",
-      bannerSrc: "/indiaschool1.svg",
-      bottomSrc: "/locationbottom.svg",
-    },
-    {
-      name: "nainital",
-      bannerSrc: "/mussorie1.svg",
-      bottomSrc: "/locationbottom.svg",
-    },
-    {
-      name: "panchgani",
-      bannerSrc: "/dehradun1.svg",
-      bottomSrc: "/locationbottom.svg",
-    },
-    {
-      name: "pune",
-      bannerSrc: "/banglore1.svg",
-      bottomSrc: "/locationbottom.svg",
-    },
-    {
-      name: "jaipur",
-      bannerSrc: "/shimla1.svg",
-      bottomSrc: "/locationbottom.svg",
-    },
-  ];
+  {
+    name: "india",
+    label: "India",
+    bannerSrc: "/indiaschool1.svg",
+    bottomSrc: "/locationbottom.svg",
+  },
+  {
+    name: "mussoorie",
+    label: "Mussoorie",
+    bannerSrc: "/mussorie1.svg",
+    bottomSrc: "/locationbottom.svg",
+  },
+  {
+    name: "dehradun",
+    label: "Dehradun",
+    bannerSrc: "/dehradun1.svg",
+    bottomSrc: "/locationbottom.svg",
+  },
+  {
+    name: "bangalore",
+    label: "Bangalore",
+    bannerSrc: "/banglore1.svg",
+    bottomSrc: "/locationbottom.svg",
+  },
+  {
+    name: "shimla",
+    label: "Shimla",
+    bannerSrc: "/shimla1.svg",
+    bottomSrc: "/locationbottom.svg",
+  },
+  {
+    name: "hyderabad",
+    label: "Hyderabad",
+    bannerSrc: "/indiaschool1.svg",
+    bottomSrc: "/locationbottom.svg",
+  },
+  {
+    name: "nainital",
+    label: "Nainital",
+    bannerSrc: "/mussorie1.svg",
+    bottomSrc: "/locationbottom.svg",
+  },
+  {
+    name: "panchgani",
+    label: "Panchgani",
+    bannerSrc: "/dehradun1.svg",
+    bottomSrc: "/locationbottom.svg",
+  },
+  {
+    name: "pune",
+    label: "Pune",
+    bannerSrc: "/banglore1.svg",
+    bottomSrc: "/locationbottom.svg",
+  },
+  {
+    name: "jaipur",
+    label: "Jaipur",
+    bannerSrc: "/shimla1.svg",
+    bottomSrc: "/locationbottom.svg",
+  },
+];
 
   return (
     <>
@@ -115,7 +125,7 @@ const Mapedulister = () => {
                 className="group rounded-xl bg-primary p-4 text-primary-foreground transition-all hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25"
               >
                 <p className="font-display text-base text-primary-foreground">
-                  {city.name}
+                  {city.label}
                 </p>
                 <p className="mt-1 flex items-center gap-1.5 text-xs text-primary-foreground/75">
                   {city.count} school{city.count !== 1 && "s"}

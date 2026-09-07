@@ -25,7 +25,7 @@ const steps = [
 
 export function HowWeRecommend() {
   return (
-    <section className="overflow-hidden bg-primary text-primary-foreground">
+    <section className="overflow-hidden bg-primary text-primary-foreground px-6 md:px-12 lg:px-20">
       <div className="container-page py-20">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs uppercase tracking-wider text-gold">Behind every recommendation</p>
