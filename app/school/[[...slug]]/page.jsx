@@ -1,5 +1,6 @@
-import SchoolDetails from "@/components/SchoolDetails";
+// import SchoolDetails from "@/components/SchoolDetails";
 import { base, baseRe } from "@/app/api/airtable";
+import SchoolDetail from "@/components/SchoolDetail";
 
 let id;
 
@@ -128,7 +129,7 @@ export default async function SchoolPage({ params }) {
 
   return (
     <div>
-      <SchoolDetails
+      <SchoolDetail
         school={schoolData}
         reviews={review.map((r, index) => ({ ...r, key: index }))}
         city={params.slug[0]}

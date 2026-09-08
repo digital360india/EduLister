@@ -10,6 +10,7 @@ import Mapedulister from "@/components/Mapedulister";
 import MobileAnimation from "@/components/MobileAnimation";
 import { HowWeRecommend } from "@/components/HowWeRecommend";
 import { HomeInquiryForm } from "@/components/HomeInquiryForm";
+import TopFeaturedSchools from "@/components/TopFeaturedSchools";
 
 export async function generateMetadata() {
   return {
@@ -62,6 +63,7 @@ export default function Home() {
       <Heroedulister />
       {/* <Formedulister /> */}
       <Mapedulister />
+      <TopFeaturedSchools />
       <HowWeRecommend />
       {/* <div className="xl:hidden">
         <MobileAnimation />

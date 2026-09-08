@@ -113,7 +113,7 @@ export default async function SchoolsPage({ params }) {
         {filtered.length === 0 ? (
           <p>No schools found.</p>
         ) : (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
             {filtered.map((r) => (
               <SchoolCard key={r.id} data={r} citySlug={citySlug} />
             ))}
