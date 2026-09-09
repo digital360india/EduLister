@@ -71,10 +71,10 @@ const Navbar = () => {
     <div>
       {/* Desktop */}
       <nav className="hidden md:block fixed top-0 z-40 border-b border-border/60 bg-background w-full">
-        <div className="container-page flex items-center justify-between h-[80px] px-6">
+        <div className="container-page flex items-center justify-between h-[80px]">
           <Link href={"/"} className="flex items-center gap-2">
             <img
-              className="w-14  md:mx-24  lg:w-[78px]"
+              className="w-14 lg:w-[78px]"
               src="/GoEdu (4) 3.svg"
               alt="EduLister"
               width={88}

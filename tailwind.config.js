@@ -14,30 +14,33 @@ module.exports = {
         "background-light": "#9B1750",
         "background-light-green": "#D4EDCE",
 
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "oklch(var(--background) / <alpha-value>)",
+        foreground: "oklch(var(--foreground) / <alpha-value>)",
 
-        card: "var(--card)",
-        "card-foreground": "var(--card-foreground)",
+        card: "oklch(var(--card) / <alpha-value>)",
+        "card-foreground": "oklch(var(--card-foreground) / <alpha-value>)",
 
-        primary: "var(--primary)",
-        "primary-foreground": "var(--primary-foreground)",
+        primary: "oklch(var(--primary) / <alpha-value>)",
+        "primary-foreground": "oklch(var(--primary-foreground) / <alpha-value>)",
 
-        secondary: "var(--secondary)",
-        "secondary-foreground": "var(--secondary-foreground)",
+        secondary: "oklch(var(--secondary) / <alpha-value>)",
+        "secondary-foreground": "oklch(var(--secondary-foreground) / <alpha-value>)",
 
-        muted: "var(--muted)",
-        "muted-foreground": "var(--muted-foreground)",
+        muted: "oklch(var(--muted) / <alpha-value>)",
+        "muted-foreground": "oklch(var(--muted-foreground) / <alpha-value>)",
 
-        accent: "var(--accent)",
-        "accent-foreground": "var(--accent-foreground)",
+        accent: "oklch(var(--accent) / <alpha-value>)",
+        "accent-foreground": "oklch(var(--accent-foreground) / <alpha-value>)",
 
-        gold: "var(--gold)",
-        "gold-foreground": "var(--gold-foreground)",
+        gold: "oklch(var(--gold) / <alpha-value>)",
+        "gold-foreground": "oklch(var(--gold-foreground) / <alpha-value>)",
 
-        border: "var(--border)",
-        input: "var(--input)",
-        ring: "var(--ring)",
+        destructive: "oklch(var(--destructive) / <alpha-value>)",
+        "destructive-foreground": "oklch(var(--destructive-foreground) / <alpha-value>)",
+
+        border: "oklch(var(--border) / <alpha-value>)",
+        input: "oklch(var(--input) / <alpha-value>)",
+        ring: "oklch(var(--ring) / <alpha-value>)",
       },
 
       fontFamily: {

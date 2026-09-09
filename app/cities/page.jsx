@@ -113,7 +113,7 @@ export default async function StatesPage() {
         {cities.map((s) => (
           <Link
             key={s.name}
-            href={`/category/boarding-schools-in-${s.name}`}
+            href={`/schools/${s.name}`}
             className="group rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
           >
             <p className="font-display text-xl group-hover:text-primary">

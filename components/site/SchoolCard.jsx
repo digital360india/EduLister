@@ -48,7 +48,7 @@ export function SchoolCard({ data, citySlug }) {
   const href = `/school/${citySlug}/${f.slug}`;
 
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card transition-all hover:shadow-[0_20px_40px_-20px_rgba(20,40,30,0.25)] hover:-translate-y-0.5">
+    <article className="group relative overflow-hidden rounded-2xl border border-border bg-card transition-all hover:shadow-[0_20px_40px_-20px_rgba(20,40,30,0.25)] hover:-translate-y-0.5">
       <Link href={href} className="block">
         <div className="relative aspect-[16/10] overflow-hidden bg-muted">
           {heroImage && (

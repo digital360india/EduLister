@@ -121,7 +121,7 @@ const Mapedulister = () => {
             {cities.map((city,index) => (
               <Link
                 key={city.name}
-                href={`/category/boarding-schools-in-${city.name}`}
+                href={`/schools/${city.name}`}
                 className="group rounded-xl bg-primary p-4 text-primary-foreground transition-all hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25"
               >
                 <p className="font-display text-base text-primary-foreground">
