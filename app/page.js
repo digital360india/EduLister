@@ -62,8 +62,8 @@ export default function Home() {
     <div>
       <Heroedulister />
       {/* <Formedulister /> */}
-      <Mapedulister />
       <TopFeaturedSchools />
+      <Mapedulister />
       <HowWeRecommend />
       {/* <div className="xl:hidden">
         <MobileAnimation />

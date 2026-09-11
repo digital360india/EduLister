@@ -64,7 +64,7 @@ export default function SchoolDetail({ school, reviews, city, id }) {
         school?.classfrom && school?.classto
           ? `${school.classfrom}–${school.classto}`
           : "—",
-      established: school?.established ?? null, // not in old schema
+      established: school?.establishment ?? null,
       student_teacher_ratio: school?.student_teacher_ratio ?? null, // not in old schema
       campus_size: school?.campus_size ?? null, // not in old schema
       fees_min: school?.feefrom,
@@ -98,7 +98,7 @@ export default function SchoolDetail({ school, reviews, city, id }) {
 //   };
 
   return (
-    <div className="bg-background px-6 md:px-8 lg:px-12">
+    <div className="bg-background ">
       <section className="relative h-[60vh] min-h-[440px] overflow-hidden">
         {s.hero_image && (
           // eslint-disable-next-line @next/next/no-img-element
@@ -126,7 +126,7 @@ export default function SchoolDetail({ school, reviews, city, id }) {
         </div>
       </section>
 
-      <div className="container-page grid gap-10 py-12 md:grid-cols-[1.6fr_1fr]">
+      <div className="container-page grid gap-10 py-12 md:grid-cols-[1.6fr_1fr] px-6 md:px-8 lg:px-12">
         <div>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {[

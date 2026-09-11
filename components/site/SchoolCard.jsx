@@ -112,7 +112,7 @@ export function SchoolCard({ data, citySlug }) {
             <input
               type="checkbox"
               checked={checked}
-              onChange={() => toggle(data?.id, f.name)}
+              onChange={() => toggle(data?.id, f.name, citySlug)}
               className="h-4 w-4 accent-primary"
             />
             Compare

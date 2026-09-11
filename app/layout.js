@@ -9,6 +9,8 @@ import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import Popup from "@/components/Popup";
 import Script from "next/script";
+import { CompareTray } from "@/components/site/CompareTray";
+import { CompareProvider } from "@/components/site/compare-store";
 // import Head from "next/head";
 // import Popup from "@/components/Ppoup";
 
@@ -85,13 +87,16 @@ export default function RootLayout({ children }) {
       </head>
       <body >
         <ToastContainer />
+        <CompareProvider>
         <Authprovider>
           <Navbar />
           {/* <Popup/> */}
           <div className="overflow-x-hidden">{children}</div>
+          <CompareTray />
           <Footer />
           <FooterLinks />
         </Authprovider>
+        </CompareProvider>
         <div className="fixed bottom-4 left-4 z-50">
           <Link href="tel:+9557695360" aria-label="Phone">
             <button className="bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600">

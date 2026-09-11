@@ -1,32 +1,85 @@
 "use client";
 
-import { createContext, useContext, useState, useCallback } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
 
 const CompareContext = createContext(null);
+const KEY = "vg_compare_v1";
+const MAX = 3;
+
+function readStorage() {
+  try {
+    const raw = window.localStorage.getItem(KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+function writeStorage(list) {
+  try {
+    window.localStorage.setItem(KEY, JSON.stringify(list));
+  } catch {
+    // ignore quota / privacy-mode errors
+  }
+}
 
 export function CompareProvider({ children }) {
-  const [items, setItems] = useState({}); // { [id]: name }
+  const [list, setList] = useState(() =>
+    typeof window !== "undefined" ? readStorage() : [],
+  );
 
-  const has = useCallback((id) => Boolean(items[id]), [items]);
+  useEffect(() => {
+    writeStorage(list);
+  }, [list]);
 
-  const toggle = useCallback((id, name) => {
-    setItems((prev) => {
-      const next = { ...prev };
-      if (next[id]) {
-        delete next[id];
+  useEffect(() => {
+    const onStorage = (e) => {
+      if (e.key === KEY) setList(readStorage());
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
+
+  const has = useCallback((id) => list.some((e) => e.id === id), [list]);
+
+  // location is required: Airtable stores each city in its own table,
+  // so we need it later to know which table to query
+  const toggle = useCallback((id, name, location) => {
+    if (!location) {
+      console.error(
+        "[compare-store] toggle called without a location for:",
+        id,
+        name,
+      );
+      return;
+    }
+    setList((cur) => {
+      const exists = cur.some((e) => e.id === id);
+      let next;
+      if (exists) {
+        next = cur.filter((e) => e.id !== id);
       } else {
-        next[id] = name;
+        const entry = { id, name, location };
+        next = cur.length >= MAX ? [...cur.slice(1), entry] : [...cur, entry];
       }
       return next;
     });
   }, []);
 
-  const clear = useCallback(() => setItems({}), []);
+  const remove = useCallback((id) => {
+    setList((cur) => cur.filter((e) => e.id !== id));
+  }, []);
 
-  const list = Object.entries(items).map(([id, name]) => ({ id, name }));
+  const clear = useCallback(() => setList([]), []);
 
   return (
-    <CompareContext.Provider value={{ has, toggle, clear, list }}>
+    <CompareContext.Provider value={{ list, has, toggle, remove, clear }}>
       {children}
     </CompareContext.Provider>
   );

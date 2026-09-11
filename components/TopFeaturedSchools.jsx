@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { base } from "@/app/api/airtable.jsx";
 import { SchoolCard } from "@/components/site/SchoolCard";
-import { CompareProvider } from "@/components/site/compare-store";
 
 async function getCategoryData(slug) {
   const rows = await base("category 2")
@@ -58,7 +57,6 @@ const TopFeaturedSchools = async () => {
   const { citySlug, featured } = await getTopFeaturedSchools();
 
   return (
-    <CompareProvider>
       <section className="container-page py-12 px-6 md:px-8 lg:px-12">
         <div className="flex items-end justify-between">
           <div>
@@ -83,7 +81,6 @@ const TopFeaturedSchools = async () => {
           </div>
         )}
       </section>
-    </CompareProvider>
   );
 };
 

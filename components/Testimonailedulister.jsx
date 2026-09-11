@@ -59,7 +59,7 @@ const CustomLeftArrow = ({ onClick }) => {
   return (
     <div
       onClick={onClick}
-      className="absolute left-0 z-10 cursor-pointer hidden md:block"
+      className="absolute left-0 z-10 cursor-pointer hidden md:block border border-border rounded-full"
     >
       <Image
         src="/leftbutton.svg"

@@ -1,6 +1,5 @@
 import { base } from "@/app/api/airtable.jsx";
 import { SchoolCard } from "@/components/site/SchoolCard";
-import { CompareProvider } from "@/components/site/compare-store";
 
 // URL type-segment -> Airtable checkbox field on the school record
 const TYPE_FIELD_MAP = {
@@ -98,7 +97,6 @@ export default async function SchoolsPage({ params }) {
   }
 
   return (
-    <CompareProvider>
       <div className="container-page py-12 px-6 md:px-8 mt-20">
         <header className="mb-8">
           <p className="text-xs uppercase tracking-wider text-gold">All schools</p>
@@ -120,6 +118,5 @@ export default async function SchoolsPage({ params }) {
           </div>
         )}
       </div>
-    </CompareProvider>
   );
 }
