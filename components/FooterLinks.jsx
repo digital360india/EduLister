@@ -22,7 +22,7 @@ export function FooterLinks() {
               {column.map((city) => (
                 <Link
                   key={city}
-                  href={`https://www.edulister.com/category/boarding-schools-in-${citySlug(
+                  href={`https://www.edulister.com/schools/${citySlug(
                     city,
                   )}`}
                   className="hover:text-primary"
