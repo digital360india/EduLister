@@ -1,20 +1,7 @@
 'use client';
 import { useState } from "react";
 import { CalendarCheck, ShieldCheck, Phone } from "lucide-react";
-// import { pageMeta, canonical } from "@/lib/seo";
-
-// export const Route = createFileRoute("/consultation")({
-//   head: () => ({
-//     meta: pageMeta({
-//       title: "Book a free boarding school counselling call — EduLister",
-//       description:
-//         "30-minute free counselling call with a boarding-school expert. We'll shortlist 3 schools that fit your child.",
-//       path: "/consultation",
-//     }),
-//     links: canonical("/consultation"),
-//   }),
-//   component: Consultation,
-// });
+import { submitLead } from "@/lib/submitLead";
 
 const BOARDS = ["CBSE", "ICSE", "IB", "IGCSE"];
 
@@ -22,6 +9,7 @@ const Consultation = () => {
   const [sending, setSending] = useState(false);
   const [boards, setBoards] = useState([]);
   const [sent, setSent] = useState(false);
+  const [toast, setToast] = useState(null);
 
   const toggle = (b) =>
     setBoards((cur) => (cur.includes(b) ? cur.filter((x) => x !== b) : [...cur, b]));
@@ -30,34 +18,32 @@ const Consultation = () => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     setSending(true);
-    // try {
-    //   const res = await fetch("/api/consultation", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({
-    //       name: String(fd.get("name") || ""),
-    //       phone: String(fd.get("phone") || ""),
-    //       email: String(fd.get("email") || ""),
-    //       child_grade: String(fd.get("child_grade") || ""),
-    //       budget_range: String(fd.get("budget") || ""),
-    //       preferred_states: String(fd.get("states") || "")
-    //         .split(",")
-    //         .map((s) => s.trim())
-    //         .filter(Boolean),
-    //       preferred_boards: boards,
-    //       notes: String(fd.get("notes") || ""),
-    //     }),
-    //   });
-
-    //   if (!res.ok) throw new Error("Request failed");
-
-    //   setSent(true);
-    //   toast.success("Booked. We'll call within 24 hours.");
-    // } catch {
-    //   toast.error("Something went wrong. Please try again.");
-    // } finally {
-    //   setSending(false);
-    // }
+    try {
+      await submitLead({
+        name: String(fd.get("name") || ""),
+        phone: String(fd.get("phone") || ""),
+        email: String(fd.get("email") || ""),
+        source: "consultation page - edulister.com",
+        meta: {
+          childGrade: String(fd.get("child_grade") || ""),
+          budget: String(fd.get("budget") || ""),
+          location: String(fd.get("states") || ""),
+          boards,
+          notes: String(fd.get("notes") || ""),
+          url: window.location.href,
+        },
+      });
+      setSent(true);
+    } catch (err) {
+      console.error(err);
+      setToast({
+        type: "error",
+        message: "Something went wrong. Please try again.",
+      });
+      window.setTimeout(() => setToast(null), 3500);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -165,6 +151,18 @@ const Consultation = () => {
           )}
         </div>
       </div>
+
+      {toast && (
+        <div
+          className={`fixed bottom-5 left-1/2 z-[60] -translate-x-1/2 rounded-full px-4 py-2.5 text-sm font-medium shadow-lg ${
+            toast.type === "success"
+              ? "bg-foreground text-background"
+              : "bg-destructive text-destructive-foreground"
+          }`}
+        >
+          {toast.message}
+        </div>
+      )}
     </div>
   );
 }

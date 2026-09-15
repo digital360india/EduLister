@@ -2,10 +2,16 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-// import { toast } from "sonner";
-import { MapPin, Star, Users, Ruler, Calendar, ExternalLink } from "lucide-react";
+import {
+  MapPin,
+  Star,
+  Users,
+  Ruler,
+  Calendar,
+  ExternalLink,
+} from "lucide-react";
 // import { useCompare } from "@/components/site/compare-store";
-// import { submitLead } from "@/lib/leads.actions";
+import { submitLead } from "@/lib/submitLead";
 
 function formatLakh(n) {
   if (!n) return "—";
@@ -26,8 +32,10 @@ const FACILITY_MAP = [
 ];
 
 export default function SchoolDetail({ school, reviews, city, id }) {
-//   const { has, toggle } = useCompare();
+  //   const { has, toggle } = useCompare();
   const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [toast, setToast] = useState(null);
 
   // Map old Airtable-shaped `school` object into the fields this design expects.
   const s = useMemo(() => {
@@ -42,18 +50,18 @@ export default function SchoolDetail({ school, reviews, city, id }) {
     const gender = school?.coed_schools
       ? "Co-Ed"
       : school?.girls_schools
-      ? "Girls School"
-      : "Boys School";
+        ? "Girls School"
+        : "Boys School";
 
     const facilities = FACILITY_MAP.filter(
-      (f) => school?.[f.check] === "checked"
+      (f) => school?.[f.check] === "checked",
     ).map((f) => f.label);
 
     return {
       id,
       name: school?.name,
       city: city || school?.Town,
-      state: school?.Town, // no distinct state field in old schema — reusing Town
+      state: school?.Town,
       hero_image: school?.Image_Code
         ? `https://res.cloudinary.com/eduminatti-com/image/upload/v1733386822/EduLister/${city}/G-${school.Image_Code}.png`
         : null,
@@ -75,53 +83,74 @@ export default function SchoolDetail({ school, reviews, city, id }) {
     };
   }, [school, city, id]);
 
-//   const onSubmit = async (e) => {
-//     e.preventDefault();
-//     const fd = new FormData(e.currentTarget);
-//     setSending(true);
-//     try {
-//       await submitLead({
-//         source: "school_detail",
-//         name: String(fd.get("name") || ""),
-//         phone: String(fd.get("phone") || ""),
-//         email: String(fd.get("email") || ""),
-//         message: String(fd.get("message") || ""),
-//         school_id: s.id,
-//       });
-//       toast.success("Sent! A counsellor will contact you soon.");
-//       e.target.reset();
-//     } catch {
-//       toast.error("Something went wrong.");
-//     } finally {
-//       setSending(false);
-//     }
-//   };
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    setSending(true);
+    try {
+      await submitLead({
+        source: "school_detail - edulister.com",
+        name: String(fd.get("name") || ""),
+        phone: String(fd.get("phone") || ""),
+        email: String(fd.get("email") || ""),
+        meta: {
+          notes: String(fd.get("message") || ""),
+          school: s.name,
+          url: window.location.href,
+        },
+      });
+      setToast({ type: "success", message: "Form submitted successfully" });
+      // e.target.reset();
+      setSent(true);
+    } catch {
+      setToast({
+        type: "error",
+        message: "Something went wrong. Please try again.",
+      });
+    } finally {
+      setSending(false);
+      window.setTimeout(() => setToast(null), 3500);
+    }
+  };
 
   return (
     <div className="bg-background ">
       <section className="relative h-[60vh] min-h-[440px] overflow-hidden">
         {s.hero_image && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={s.hero_image} alt={s.name} className="h-full w-full object-cover " />
+          <img
+            src={s.hero_image}
+            alt={s.name}
+            className="h-full w-full object-cover "
+          />
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/70" />
         <div className="container-page absolute inset-x-0 bottom-0 pb-10 text-primary-foreground">
           <p className="flex items-center gap-1 text-sm text-black">
-            <MapPin size={14} /> {s.city}{s.state ? `, ${s.state}` : ""}
+            <MapPin size={14} /> {s.city}
+            {s.state ? `, ${s.state}` : ""}
           </p>
-          <h1 className="mt-2 font-display text-black text-4xl md:text-6xl">{s.name}</h1>
+          <h1 className="mt-2 font-display text-black text-4xl md:text-6xl">
+            {s.name}
+          </h1>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-sm">
             <span className="inline-flex items-center gap-1 rounded-full bg-background/95 px-3 py-1 text-foreground">
               <Star size={12} className="fill-gold text-gold" />
               {/* {s.rating?.toFixed(1)} */}
             </span>
             {s.boards.map((b) => (
-              <span key={b} className="rounded-full bg-gold px-3 py-1 text-xs font-medium text-gold-foreground">
+              <span
+                key={b}
+                className="rounded-full bg-gold px-3 py-1 text-xs font-medium text-gold-foreground"
+              >
                 {b}
               </span>
             ))}
-            <span className="rounded-full bg-primary-foreground/15 px-3 py-1 text-xs">{s.gender}</span>
-            <span className="rounded-full bg-primary-foreground/15 px-3 py-1 text-xs">Class {s.class_range}</span>
+            <span className="rounded-full bg-primary-foreground/15 px-3 py-1 text-xs">
+              {s.gender}
+            </span>
+            <span className="rounded-full bg-primary-foreground/15 px-3 py-1 text-xs">
+              Class {s.class_range}
+            </span>
           </div>
         </div>
       </section>
@@ -130,14 +159,31 @@ export default function SchoolDetail({ school, reviews, city, id }) {
         <div>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {[
-              { icon: Calendar, label: "Established", value: s.established?.toString() ?? "—" },
-              { icon: Users, label: "Student:Teacher", value: s.student_teacher_ratio ?? "—" },
+              {
+                icon: Calendar,
+                label: "Established",
+                value: s.established?.toString() ?? "—",
+              },
+              {
+                icon: Users,
+                label: "Student:Teacher",
+                value: s.student_teacher_ratio ?? "—",
+              },
               { icon: Ruler, label: "Campus", value: s.campus_size ?? "—" },
-              { icon: Star, label: "Fees / year", value: `${formatLakh(s.fees_min)}–${formatLakh(s.fees_max)}` },
+              {
+                icon: Star,
+                label: "Fees / year",
+                value: `${formatLakh(s.fees_min)}–${formatLakh(s.fees_max)}`,
+              },
             ].map((k) => (
-              <div key={k.label} className="rounded-2xl border border-border/60 bg-card p-4">
+              <div
+                key={k.label}
+                className="rounded-2xl border border-border/60 bg-card p-4"
+              >
                 <k.icon size={16} className="text-gold" />
-                <p className="mt-3 text-[11px] uppercase tracking-wider text-muted-foreground">{k.label}</p>
+                <p className="mt-3 text-[11px] uppercase tracking-wider text-muted-foreground">
+                  {k.label}
+                </p>
                 <p className="mt-1 font-display text-lg">{k.value}</p>
               </div>
             ))}
@@ -186,7 +232,10 @@ export default function SchoolDetail({ school, reviews, city, id }) {
                 Official website <ExternalLink size={12} />
               </a>
             )}
-            <Link href="/schools" className="text-sm text-muted-foreground hover:underline self-center">
+            <Link
+              href="/schools"
+              className="text-sm text-muted-foreground hover:underline self-center"
+            >
               ← Back to all schools
             </Link>
           </div>
@@ -194,22 +243,67 @@ export default function SchoolDetail({ school, reviews, city, id }) {
 
         <aside className="md:sticky md:top-24 md:self-start">
           <div className="rounded-2xl border border-border bg-card p-6">
-            <p className="text-xs uppercase tracking-wider text-gold">Free counselling</p>
-            <h3 className="mt-2 font-display text-xl">Interested in {s.name}?</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Get admission timelines, fee breakdown, and honest pros/cons from a counsellor.
+            <p className="text-xs uppercase tracking-wider text-gold">
+              Free counselling
             </p>
-            <form
-            //  onSubmit={onSubmit}
-             className="mt-4 space-y-3">
-              <input name="name" required minLength={2} maxLength={100} placeholder="Parent name" className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm" />
-              <input name="phone" required type="tel" minLength={7} maxLength={20} placeholder="Phone" className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm" />
-              <input name="email" type="email" maxLength={200} placeholder="Email (optional)" className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm" />
-              <textarea name="message" maxLength={1000} rows={3} placeholder="Your questions (optional)" className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm" />
-              <button disabled={sending} className="w-full rounded-full bg-primary py-2.5 text-sm font-medium text-primary-foreground disabled:opacity-60">
+            <h3 className="mt-2 font-display text-xl">
+              Interested in {s.name}?
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Get admission timelines, fee breakdown, and honest pros/cons from
+              a counsellor.
+            </p>
+            <form onSubmit={onSubmit} className="mt-4 space-y-3">
+              <input
+                name="name"
+                required
+                minLength={2}
+                maxLength={100}
+                placeholder="Parent name"
+                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm"
+              />
+              <input
+                name="phone"
+                required
+                type="tel"
+                minLength={7}
+                maxLength={20}
+                placeholder="Phone"
+                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm"
+              />
+              <input
+                name="email"
+                type="email"
+                maxLength={200}
+                placeholder="Email (optional)"
+                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm"
+              />
+              <textarea
+                name="message"
+                maxLength={1000}
+                rows={3}
+                placeholder="Your questions (optional)"
+                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm"
+              />
+              <button
+                disabled={sending}
+                className="w-full rounded-full bg-primary py-2.5 text-sm font-medium text-primary-foreground disabled:opacity-60"
+              >
                 {sending ? "Sending…" : "Request info"}
               </button>
             </form>
+
+            {toast && (
+              <div
+                className={`fixed bottom-5 left-1/2 z-[60] -translate-x-1/2 rounded-full px-4 py-2.5 text-sm font-medium shadow-lg ${
+                  toast.type === "success"
+                    ? "bg-foreground text-background"
+                    : "bg-destructive text-destructive-foreground"
+                }`}
+              >
+                {toast.message}
+              </div>
+            )}
           </div>
         </aside>
       </div>

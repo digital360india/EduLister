@@ -108,7 +108,7 @@ function Contact() {
         <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-card">
           <iframe
             title="EduLister office location"
-            src="https://maps.google.com/maps?q=B-36,+Nehru+Colony,+Dharampur,+Dehradun,+Uttarakhand,+India&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d360.67400630946986!2d78.05322462023929!3d30.301471846414007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929a7e42c1d2b%3A0xe93ce3508a056186!2sB%2C%20Block%20B%2C%2036%2C%20Nehru%20Colony%20Rd%2C%20C%20Block%2C%20Nehru%20Colony%2C%20Dalanwala%2C%20Dehradun%2C%20Uttarakhand%20248001!5e0!3m2!1sen!2sin!4v1789464118598!5m2!1sen!2sin"
             width="100%"
             height="400"
             style={{ border: 0 }}

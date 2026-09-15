@@ -90,7 +90,7 @@ export default function RootLayout({ children }) {
         <CompareProvider>
         <Authprovider>
           <Navbar />
-          {/* <Popup/> */}
+          <Popup/>
           <div className="overflow-x-hidden">{children}</div>
           <CompareTray />
           <Footer />

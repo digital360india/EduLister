@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import ConsultationPopup from "./ConsultationPopup";
+import { LeadPopup } from "./LeadPopup";
 
 export default function Popup() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -28,5 +28,5 @@ export default function Popup() {
     setIsPopupVisible(false);
   };
 
-  return <>{isPopupVisible && <ConsultationPopup setClose={handleClose} />}</>;
+  return <>{isPopupVisible && <LeadPopup setClose={handleClose} />}</>;
 }
