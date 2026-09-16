@@ -11,8 +11,8 @@ import Popup from "@/components/Popup";
 import Script from "next/script";
 import { CompareTray } from "@/components/site/CompareTray";
 import { CompareProvider } from "@/components/site/compare-store";
+import { LeadPopup } from "@/components/LeadPopup";
 // import Head from "next/head";
-// import Popup from "@/components/Ppoup";
 
 export async function generateMetadata() {
   return {
@@ -90,7 +90,7 @@ export default function RootLayout({ children }) {
         <CompareProvider>
         <Authprovider>
           <Navbar />
-          <Popup/>
+          <LeadPopup/>
           <div className="overflow-x-hidden">{children}</div>
           <CompareTray />
           <Footer />

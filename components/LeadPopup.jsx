@@ -6,47 +6,31 @@ import { submitLead } from "@/lib/submitLead";
 
 const SUPPRESSED_ROUTES = ["/consultation", "/contact"];
 
-export function LeadPopup({ setClose }) {
+export function LeadPopup() {
   const [open, setOpen] = useState(false);
-  const [visible, setVisible] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [toast, setToast] = useState(null);
   const pathname = usePathname();
 
+  // Decide when to show the popup
   useEffect(() => {
     if (SUPPRESSED_ROUTES.includes(pathname)) return;
 
-    let fired = false;
-    const trigger = () => {
-      if (fired) return;
-      fired = true;
-      setOpen(true);
-    };
-    const timer = window.setTimeout(trigger, 20_000);
-    const onLeave = (e) => {
-      if (e.clientY <= 0) trigger();
-    };
-    document.addEventListener("mouseleave", onLeave);
-    return () => {
-      window.clearTimeout(timer);
-      document.removeEventListener("mouseleave", onLeave);
-    };
+    const timer = window.setTimeout(() => setOpen(true), 20_000);
+    return () => window.clearTimeout(timer);
   }, [pathname]);
 
-  // Mount immediately on open; briefly delay the visible class so the
-  // CSS transition (opacity/scale) actually animates in.
+  // Lock page scroll only while open, always restore on close/unmount
   useEffect(() => {
-    if (open) {
-      const raf = requestAnimationFrame(() => setVisible(true));
-      return () => cancelAnimationFrame(raf);
-    }
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
   }, [open]);
 
-  const close = () => {
-    setVisible(false);
-    // wait for the exit transition before unmounting
-    window.setTimeout(() => setOpen(false), 200);
-  };
+  const close = () => setOpen(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -63,35 +47,28 @@ export function LeadPopup({ setClose }) {
           url: window.location.href,
         },
       });
-      // close();
+      close();
       setToast({ type: "success", message: "Form submitted successfully" });
     } catch (err) {
       console.error(err);
-      setToast({
-        type: "error",
-        message: "Something went wrong. Please try again.",
-      });
+      setToast({ type: "error", message: "Something went wrong. Please try again." });
     } finally {
       setSubmitting(false);
       window.setTimeout(() => setToast(null), 3500);
     }
   };
 
+  if (!open && !toast) return null;
+
   return (
     <>
       {open && (
         <div
-          className={`fixed inset-0 z-50 grid place-items-center bg-foreground/40 p-4 backdrop-blur-sm transition-opacity duration-200 ${
-            visible ? "opacity-100" : "opacity-0"
-          }`}
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-foreground/40 p-4 py-10 backdrop-blur-sm"
           onClick={close}
         >
           <div
-            className={`relative w-full max-w-md overflow-hidden rounded-2xl bg-card shadow-2xl transition-all duration-200 ${
-              visible
-                ? "translate-y-0 scale-100 opacity-100"
-                : "translate-y-5 scale-95 opacity-0"
-            }`}
+            className="relative w-full max-w-md overflow-hidden rounded-2xl bg-card shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -101,6 +78,7 @@ export function LeadPopup({ setClose }) {
             >
               <X size={16} />
             </button>
+
             <div className="bg-primary p-6 text-primary-foreground">
               <p className="text-xs uppercase tracking-wider text-gold">
                 Free · No obligation
@@ -109,15 +87,14 @@ export function LeadPopup({ setClose }) {
                 Confused about boarding schools?
               </h3>
               <p className="mt-2 text-sm text-primary-foreground/80">
-                Talk to a counsellor. We'll shortlist 3 that actually fit — based on
-                your child, not a paid list.
+                Talk to a counsellor. We'll shortlist 3 that actually fit —
+                based on your child, not a paid list.
               </p>
             </div>
+
             <form onSubmit={onSubmit} className="space-y-3 p-6">
               <div>
-                <label className="text-xs font-medium text-foreground">
-                  Parent name
-                </label>
+                <label className="text-xs font-medium text-foreground">Parent name</label>
                 <input
                   name="name"
                   required
@@ -127,9 +104,7 @@ export function LeadPopup({ setClose }) {
                 />
               </div>
               <div>
-                <label className="text-xs font-medium text-foreground">
-                  Phone (WhatsApp)
-                </label>
+                <label className="text-xs font-medium text-foreground">Phone (WhatsApp)</label>
                 <input
                   name="phone"
                   type="tel"
@@ -142,9 +117,7 @@ export function LeadPopup({ setClose }) {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-medium text-foreground">
-                    Child's grade
-                  </label>
+                  <label className="text-xs font-medium text-foreground">Child's grade</label>
                   <input
                     name="child_grade"
                     maxLength={50}
@@ -153,9 +126,7 @@ export function LeadPopup({ setClose }) {
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-medium text-foreground">
-                    Preferred state
-                  </label>
+                  <label className="text-xs font-medium text-foreground">Preferred state</label>
                   <input
                     name="location"
                     maxLength={80}
