@@ -1,19 +1,80 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Search, Eye, ShieldCheck, HeartHandshake, Star } from "lucide-react";
+import {
+  ChevronDown,
+  Eye,
+  ShieldCheck,
+  HeartHandshake,
+  Star,
+  Search,
+} from "lucide-react";
 import heroImg from "@/public/image.png";
 import Image from "next/image";
 
+const SCHOOL_TYPES = [
+  "Boarding",
+  "Boys Boarding",
+  "Full Boarding",
+  "Girls Boarding",
+  "Day Boarding",
+];
+
+const SCHOOL_TYPE_SLUGS = {
+  "Boarding": "boarding-schools",
+  "Boys Boarding": "boys-boarding-schools",
+  "Full Boarding": "full-boarding-schools",
+  "Girls Boarding": "girls-boarding-schools",
+  "Day Boarding": "day-boarding-schools",
+};
+
+const LOCATIONS = [
+  "dehradun",
+  "mussoorie",
+  "shimla",
+  "bengaluru",
+  "india",
+  "chandigarh",
+  "mumbai",
+  "faridabad",
+  "nainital",
+  "varanasi",
+  "kolkata",
+  "udaipur",
+  "jaipur",
+  "panchgani",
+  "sikar",
+  "hyderabad",
+  "pune",
+  "delhi",
+  "darjeeling",
+  "ajmer",
+  "gujarat",
+  "delhincr",
+];
+
 export default function Hero() {
-  const [q, setQ] = useState("");
   const router = useRouter();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const params = new URLSearchParams();
-    if (q) params.set("q", q);
-    router.push(`/schools${params.toString() ? `?${params.toString()}` : ""}`);
+  const [schoolType, setSchoolType] = useState(null); // raw label, e.g. "Boys Boarding"
+  const [location, setLocation] = useState(null); // e.g. "dehradun"
+  const [typeOpen, setTypeOpen] = useState(false);
+  const [locationOpen, setLocationOpen] = useState(false);
+
+  const selectType = (type) => {
+    setSchoolType(type);
+    setTypeOpen(false);
+  };
+
+  const selectLocation = (loc) => {
+    setLocation(loc);
+    setLocationOpen(false);
+  };
+
+  const onSearch = () => {
+    if (!schoolType || !location) return;
+    const typeSlug = SCHOOL_TYPE_SLUGS[schoolType];
+    router.push(`/schools/${location}/${typeSlug}`);
   };
 
   return (
@@ -33,36 +94,117 @@ export default function Hero() {
             EDULISTER · School discovery &amp; comparison
           </span>
           <h5 className="mt-5 font-display text-5xl leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
-            Discover. Compare.<br />
+            Discover. Compare.
+            <br />
             <span className="italic text-gold">Choose Better.</span>
           </h5>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/85 md:text-lg">
-            Find the right school for your child. EduLister brings school information together - location, curriculum,
-            fees, facilities, boarding and admissions - so you can evaluate options that genuinely fit your family.
+            Find the right school for your child. EduLister brings school
+            information together - location, curriculum, fees, facilities,
+            boarding and admissions - so you can evaluate options that genuinely
+            fit your family.
           </p>
 
-          <form
-            onSubmit={onSubmit}
-            className="mt-8 flex flex-col gap-2 rounded-2xl bg-card p-2 text-foreground shadow-xl sm:flex-row"
-          >
-            <div className="flex flex-1 items-center gap-3 px-3">
-              <Search size={16} className="text-muted-foreground" />
-              <input
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-                placeholder="Search by school, city or state…"
-                className="w-full bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground"
-              />
+          <div className="relative mt-8 rounded-2xl bg-card p-2 text-foreground shadow-xl">
+            <div className="flex flex-col gap-2 sm:flex-row">
+              {/* School type trigger */}
+              <button
+                type="button"
+                onClick={() => {
+                  setTypeOpen((o) => !o);
+                  setLocationOpen(false);
+                }}
+                className="flex flex-1 items-center justify-between gap-2 rounded-xl border border-input px-4 py-3 text-left text-sm sm:border-0 sm:border-r"
+              >
+                <span className={schoolType ? "" : "text-muted-foreground"}>
+                  {schoolType ? `${schoolType} School` : "School type"}
+                </span>
+                <ChevronDown size={16} className="text-muted-foreground" />
+              </button>
+
+              {/* Location trigger */}
+              <button
+                type="button"
+                onClick={() => {
+                  setLocationOpen((o) => !o);
+                  setTypeOpen(false);
+                }}
+                className="flex flex-1 items-center justify-between gap-2 rounded-xl border border-input px-4 py-3 text-left text-sm capitalize sm:border-0"
+              >
+                <span className={location ? "" : "text-muted-foreground"}>
+                  {location || "Location"}
+                </span>
+                <ChevronDown size={16} className="text-muted-foreground" />
+              </button>
+
+              <button
+                type="button"
+                onClick={onSearch}
+                className="flex items-center justify-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-gold-foreground hover:bg-gold/90"
+              >
+                <Search size={16} />
+                Search
+              </button>
             </div>
-            <button className="rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-gold-foreground hover:bg-gold/90">
-              Explore more
-            </button>
-          </form>
+
+            {/* School type dropdown */}
+            {typeOpen && (
+              <div className="absolute left-0 top-full z-20 mt-2 w-full max-w-sm rounded-xl border border-border bg-card p-2 shadow-xl sm:w-80">
+                <ul className="max-h-72 overflow-y-auto">
+                  {SCHOOL_TYPES.map((type) => (
+                    <li
+                      key={type}
+                      onClick={() => selectType(type)}
+                      className="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2.5 text-sm hover:bg-muted"
+                    >
+                      <input
+                        type="radio"
+                        readOnly
+                        checked={schoolType === type}
+                        className="pointer-events-none"
+                      />
+                      {type} School
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Location dropdown */}
+            {locationOpen && (
+              <div className="absolute left-0 top-full z-20 mt-2 w-full max-w-sm rounded-xl border border-border bg-card p-2 shadow-xl sm:w-80">
+                <ul className="max-h-72 overflow-y-auto">
+                  {LOCATIONS.map((loc) => (
+                    <li
+                      key={loc}
+                      onClick={() => selectLocation(loc)}
+                      className="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2.5 text-sm capitalize hover:bg-muted"
+                    >
+                      <input
+                        type="radio"
+                        readOnly
+                        checked={location === loc}
+                        className="pointer-events-none"
+                      />
+                      {loc}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-6 text-xs text-primary-foreground/80">
-            <div className="flex items-center gap-2"><Eye size={14} className="text-gold" /> 300+ campuses visited</div>
-            <div className="flex items-center gap-2"><ShieldCheck size={14} className="text-gold" /> Zero paid listings</div>
-            <div className="flex items-center gap-2"><HeartHandshake size={14} className="text-gold" /> Free counselling</div>
+            <div className="flex items-center gap-2">
+              <Eye size={14} className="text-gold" /> 300+ campuses visited
+            </div>
+            <div className="flex items-center gap-2">
+              <ShieldCheck size={14} className="text-gold" /> Zero paid listings
+            </div>
+            <div className="flex items-center gap-2">
+              <HeartHandshake size={14} className="text-gold" /> Free
+              counselling
+            </div>
           </div>
         </div>
 
@@ -83,7 +225,9 @@ export default function Hero() {
               </div>
               <div className="">
                 <p className="font-display text-lg font-semibold">4.9 / 5</p>
-                <p className="text-xs text-muted-foreground">Parent trust score</p>
+                <p className="text-xs text-muted-foreground">
+                  Parent trust score
+                </p>
               </div>
             </div>
           </div>
