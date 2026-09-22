@@ -193,7 +193,7 @@ export default function SchoolDetail({ school, reviews, city, id }) {
             <h2 className="font-display text-2xl">About the school</h2>
             <div
               dangerouslySetInnerHTML={{ __html: s.long_desc }}
-              className="article-container mt-6 leading-relaxed text-foreground/90 text-[16px] h-[323px] text-justify overflow-y-scroll"
+              className="article-container mt-6 leading-relaxed text-[16px] h-[323px] text-justify overflow-y-scroll"
             />
           </section>
 
