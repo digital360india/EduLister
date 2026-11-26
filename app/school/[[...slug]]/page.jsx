@@ -14,6 +14,7 @@ async function get(params) {
       id = value[0]?.id;
       return value[0]?.fields;
     });
+    console.log("schoolData", schoolData);
   return schoolData;
 }
 

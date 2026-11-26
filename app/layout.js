@@ -98,7 +98,7 @@ export default function RootLayout({ children }) {
         </Authprovider>
         </CompareProvider>
         <div className="fixed bottom-4 left-4 z-50">
-          <Link href="tel:+9760548360" aria-label="Phone">
+          <Link href="tel:+9068159991" aria-label="Phone">
             <button className="bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600">
               <FaPhoneAlt className="text-2xl " />
             </button>

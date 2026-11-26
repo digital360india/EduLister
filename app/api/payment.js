@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         merchantId: merchantId,
         merchantTransactionId: transactionId,
         merchantUserId: muid,
-        amount: amount * 100, // Amount in paise/cents (multiply by 100)
+        amount: amount * 100, // Amount in paise (multiply by 100)
         redirectUrl: redirectUrl,
         redirectMode: "POST",
         callbackUrl: callbackUrl,
